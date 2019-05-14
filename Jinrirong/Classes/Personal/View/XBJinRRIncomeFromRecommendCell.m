@@ -76,7 +76,7 @@
                         
                     }else {
                         //按金额
-                        self.bonusLabel.text = [NSString stringWithFormat:@"放款奖金: 放款%@元",tModel.two_ymoney];
+                        self.bonusLabel.text = [NSString stringWithFormat:@"放款奖金: 放款%@元",tModel.Ymoney];
                         
                     }
                 }
@@ -107,7 +107,7 @@
                         
                     }else {
                         //按金额
-                        self.bonusLabel.text = [NSString stringWithFormat:@"放款奖金: 放款%@元",tModel.two_ymoney];
+                        self.bonusLabel.text = [NSString stringWithFormat:@"放款奖金: 放款%@元",tModel.Ymoney];
                         
                     }
                 }

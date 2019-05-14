@@ -74,6 +74,9 @@
     
     
     [self checkNewVersionWithAppid:@[@"1462607266",@"1462613312",@"1462843477"] atViewController:self.window.rootViewController];
+    
+    //切换界面
+    [self updateApp];
 
     FMDatabase * db = [FMDBSingle shareFMDB].fd;
     [db open];
@@ -220,48 +223,11 @@
 
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-//    [self checkVersion];
-}
-
-
-- (void )checkVersion{
-    [XBJinRRNetworkApiManager checkVersionBlock:^(id data) {
-        NSDictionary *dataDic = data[@"data"];
-        if ([dataDic allValues].count>0) {
-            NSString *localVersion = [[[NSBundle mainBundle]infoDictionary] objectForKey:@"CFBundleShortVersionString"];//当前版本
-            if ([dataDic[@"Ver"] compare: localVersion] == NSOrderedDescending) {
-                NSString *str = [LLUtils filterHTMLByVersionDes:dataDic[@"Updates"]];
-                MyLog(@"%@",data);
-                if ([[NSString stringWithFormat:@"%@",dataDic[@"isForced"]] isEqualToString:@"2"]) {
-                    //非强制更新
-                    [self->versionView removeFromSuperview];
-                    //强制更新版本
-                    self->versionView = [LF_ShowVersionView alterViewWithTitle:[NSString stringWithFormat:@"发现新版本v%@",dataDic[@"Ver"]] content:str cancel:@"取消" sure:@"前往更新" cancelBtClcik:^{
-                        
-                    } sureBtClcik:^{
-                        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:dataDic[@"Url"]]];
-                    }];
-                }else{
-                    //强制更新
-                    [self->versionView removeFromSuperview];
-                    //强制更新版本
-                    self->versionView = [LF_ShowVersionView alterViewWithTitle:[NSString stringWithFormat:@"发现新版本v%@",dataDic[@"Ver"]] content:str cancel:@"" sure:@"前往更新" cancelBtClcik:^{
-                        
-                    } sureBtClcik:^{
-                        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:dataDic[@"Url"]]];
-                    }];
-                }
-            }
-        }
-        
-    } fail:^(NSError *errorString) {
-        
-    }];
 }
 
 //切换界面用
 - (void)updateApp {
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://itunes.apple.com/lookup?id=%@",@"1445514961"]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://itunes.apple.com/lookup?id=%@",@"1462843477"]];
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL:url];
     [request setHTTPMethod:@"POST"];
@@ -303,30 +269,9 @@
                                                      });
                                                      
                                                      
-                                                     
-                                                     //                                                     if ([version integerValue]>[currentVersion integerValue])
-                                                     //                                                     {
-                                                     //                                                         NSString * str=[versionDict objectForKey:@"releaseNotes"];
-                                                     //
-                                                     //                                                         UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"发现新版本" message:str preferredStyle:UIAlertControllerStyleAlert];
-                                                     //                                                         UIView *subView1 = alert.view.subviews[0];
-                                                     //                                                         UIView *subView2 = subView1.subviews[0];
-                                                     //                                                         UIView *subView3 = subView2.subviews[0];
-                                                     //                                                         UIView *subView4 = subView3.subviews[0];
-                                                     //                                                         UIView *subView5 = subView4.subviews[0];
-                                                     //                                                         UILabel *message = subView5.subviews[1];
-                                                     //                                                         message.textAlignment = NSTextAlignmentCenter;
-                                                     //
-                                                     //                                                         [alert addAction:[UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleCancel handler:nil]];
-                                                     //                                                         [alert addAction:[UIAlertAction actionWithTitle:@"去更新" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                                                     //
-                                                     //                                                             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://itunes.apple.com/cn/app/id%@?mt=8",@"1435758559"]]];
-                                                     //                                                             exit(0);
-                                                     //
-                                                     //                                                         }]];
-                                                     //                                                         [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:nil];
-                                                     //                                                     }
-                                                     
+                                                 }else {
+                                                     //未上架
+                                                     [self updateQiYeApp];
                                                      
                                                  }
                                              }
@@ -335,6 +280,57 @@
     
     
 }
+
+//企业级更新
+- (void)updateQiYeApp {
+
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://www.pgyer.com/apiv2/app/check"]];
+
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL:url];
+    request.HTTPBody = [@"_api_key=de0125590c51f13222db7e10796a58ff&appKey=a76f93a33d8d67cb234829d59703e2af" dataUsingEncoding:NSUTF8StringEncoding];
+    [request setHTTPMethod:@"POST"];
+    
+    [[[NSURLSession sharedSession] dataTaskWithRequest:request
+                                     completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+                                         
+                                         if (data)
+                                         {
+                                             NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+                                             
+                                             if (dic)
+                                             {
+                                                 if ([[NSString stringWithFormat:@"%@",dic[@"data"][@"buildVersion"]] isEqualToString:@"0.1"]) {
+                                                     //服务器build版本
+                                                     NSString * version = [dic[@"data"][@"buildVersionNo"] stringByReplacingOccurrencesOfString:@"." withString:@""];
+                                                     //当前版本build 版本
+                                                     NSString * currentVersion = [[[NSBundle mainBundle].infoDictionary objectForKey:@"CFBundleVersion"] stringByReplacingOccurrencesOfString:@"." withString:@""];
+                                                     
+                                                     
+                                                     dispatch_async(dispatch_get_main_queue(), ^{
+                                                         
+                                                         if ([version integerValue] > [currentVersion integerValue]) {
+                                                             
+                                                             UIAlertController * alert = [UIAlertController alertControllerWithTitle:nil message:@"发现新版本,请去更新!" preferredStyle:UIAlertControllerStyleAlert];
+                                                             
+                                                             [alert addAction:[UIAlertAction actionWithTitle:@"去更新" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                                                 
+                                                                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.pgyer.com/I2ns"]];
+                                                                 
+                                                             }]];
+                                                             [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:nil];
+                                                             
+                                                         }
+                                                         
+                                                     });
+                                                 }
+
+                                             }
+                                         }
+                                     }] resume];
+    
+    
+}
+
 
 //检查更新
 -(void)checkNewVersionWithAppid:(NSArray *)arr atViewController:(UIViewController *)viewController
@@ -369,15 +365,7 @@
                                                              NSString * str=[versionDict objectForKey:@"releaseNotes"];
                                                              
                                                              UIAlertController * alert = [UIAlertController alertControllerWithTitle:nil message:@"发现新版本,去appStore下载稳定版本" preferredStyle:UIAlertControllerStyleAlert];
-                                                             //                                                         UIView *subView1 = alert.view.subviews[0];
-                                                             //                                                         UIView *subView2 = subView1.subviews[0];
-                                                             //                                                         UIView *subView3 = subView2.subviews[0];
-                                                             //                                                         UIView *subView4 = subView3.subviews[0];
-                                                             //                                                         UIView *subView5 = subView4.subviews[0];
-                                                             //                                                         UILabel *message = subView5.subviews[1];
-                                                             //                                                         message.textAlignment = NSTextAlignmentLeft;
-                                                             
-                                                             //                                                         [alert addAction:[UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleCancel handler:nil]];
+
                                                              [alert addAction:[UIAlertAction actionWithTitle:@"去更新" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                                                                  
                                                                  [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://itunes.apple.com/cn/app/id%@?mt=8",strOfAppid]]];

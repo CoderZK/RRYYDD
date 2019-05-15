@@ -369,6 +369,9 @@
 		583FC9C4228BF08500747055 /* kkkkGongZuoJiHuaListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 583FC9B0228BF08400747055 /* kkkkGongZuoJiHuaListVC.m */; };
 		583FC9C5228BF08500747055 /* kkkkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 583FC9B2228BF08400747055 /* kkkkModel.m */; };
 		583FC9C6228BF08500747055 /* kkkkGongZuoJiHuaVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 583FC9B3228BF08400747055 /* kkkkGongZuoJiHuaVC.xib */; };
+		583FC9C9228C113200747055 /* kkkkRenWuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 583FC9C8228C113200747055 /* kkkkRenWuVC.m */; };
+		583FC9CD228C130200747055 /* kkkkAddRenWuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 583FC9CB228C130100747055 /* kkkkAddRenWuVC.m */; };
+		583FC9CE228C130200747055 /* kkkkAddRenWuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 583FC9CC228C130200747055 /* kkkkAddRenWuVC.xib */; };
 		58552F29228270850084041A /* BaseViewController+PublicMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 58552F1B228270840084041A /* BaseViewController+PublicMethod.m */; };
 		58552F2A228270850084041A /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58552F1C228270840084041A /* BaseTableViewController.m */; };
 		58552F2B228270850084041A /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58552F1D228270850084041A /* BaseNavigationController.m */; };
@@ -1110,6 +1113,11 @@
 		583FC9B2228BF08400747055 /* kkkkModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = kkkkModel.m; sourceTree = "<group>"; };
 		583FC9B3228BF08400747055 /* kkkkGongZuoJiHuaVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = kkkkGongZuoJiHuaVC.xib; sourceTree = "<group>"; };
 		583FC9B4228BF08400747055 /* kkkkGongZuoJiHuaListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kkkkGongZuoJiHuaListVC.h; sourceTree = "<group>"; };
+		583FC9C7228C113200747055 /* kkkkRenWuVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kkkkRenWuVC.h; sourceTree = "<group>"; };
+		583FC9C8228C113200747055 /* kkkkRenWuVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = kkkkRenWuVC.m; sourceTree = "<group>"; };
+		583FC9CA228C130100747055 /* kkkkAddRenWuVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kkkkAddRenWuVC.h; sourceTree = "<group>"; };
+		583FC9CB228C130100747055 /* kkkkAddRenWuVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = kkkkAddRenWuVC.m; sourceTree = "<group>"; };
+		583FC9CC228C130200747055 /* kkkkAddRenWuVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = kkkkAddRenWuVC.xib; sourceTree = "<group>"; };
 		58552F1A228270840084041A /* BaseCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCollectionViewController.h; sourceTree = "<group>"; };
 		58552F1B228270840084041A /* BaseViewController+PublicMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseViewController+PublicMethod.m"; sourceTree = "<group>"; };
 		58552F1C228270840084041A /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
@@ -2671,6 +2679,11 @@
 				587296362282A97900BC1EF5 /* kkkkHomeTwoCell.m */,
 				5872963D2282C7F300BC1EF5 /* kkkkNewsVC.h */,
 				5872963E2282C7F300BC1EF5 /* kkkkNewsVC.m */,
+				583FC9C7228C113200747055 /* kkkkRenWuVC.h */,
+				583FC9C8228C113200747055 /* kkkkRenWuVC.m */,
+				583FC9CA228C130100747055 /* kkkkAddRenWuVC.h */,
+				583FC9CB228C130100747055 /* kkkkAddRenWuVC.m */,
+				583FC9CC228C130200747055 /* kkkkAddRenWuVC.xib */,
 			);
 			path = vmvs;
 			sourceTree = "<group>";
@@ -2835,6 +2848,7 @@
 				043F023F20E75B0000BF8D39 /* XBJinRRBigBankCardCell.xib in Resources */,
 				5872963C2282BC9900BC1EF5 /* kkkkCell.xib in Resources */,
 				583FC9C6228BF08500747055 /* kkkkGongZuoJiHuaVC.xib in Resources */,
+				583FC9CE228C130200747055 /* kkkkAddRenWuVC.xib in Resources */,
 				587296412282D84A00BC1EF5 /* RYD.db in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3011,6 +3025,7 @@
 				0457347720C8C31A00919F64 /* XBJinRRNewsListModel.m in Sources */,
 				3C360A7720A04D7900649912 /* SDCollectionViewCell.m in Sources */,
 				3C360A9D20A04FF100649912 /* NSObject+MJProperty.m in Sources */,
+				583FC9CD228C130200747055 /* kkkkAddRenWuVC.m in Sources */,
 				3C360AF220A053D500649912 /* SDWebImageWebPCoder.m in Sources */,
 				3C7271F220AA826E00E625C9 /* XBJinRRBuyAgencyViewController.m in Sources */,
 				3C78039720A2A3EB00F91B98 /* XBJinRRPersonalNormalCell.m in Sources */,
@@ -3049,6 +3064,7 @@
 				0491C57220B80E9C00FBB3FA /* XBJinRR_CreditCardViewController.m in Sources */,
 				043C7F9320C5328F00AA226B /* DatePickerView.m in Sources */,
 				58552F45228270D20084041A /* UIViewController+AlertShow.m in Sources */,
+				583FC9C9228C113200747055 /* kkkkRenWuVC.m in Sources */,
 				3C66D26F20A16F4500C4F68F /* XBJinRRProductCell.m in Sources */,
 				3C8037A720ABC35D0040A542 /* XBJinRRMyMessageHeader.m in Sources */,
 				3C360AEC20A053D500649912 /* SDWebImageFrame.m in Sources */,

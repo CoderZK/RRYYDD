@@ -170,7 +170,7 @@
             [UDefault setObject:data[@"data"][@"ID"] keys:TICKSID];
             [UDefault setObject:data[@"data"][@"Val"] keys:TICKSVAL];
             
-
+            [UDefault setObject:phone keys:@"phone"];
             
             
             NSString *firstTokenpartString= [[Security shareSecurity] getMD5StringWithphoneStr:phone timeVal:[UDefault getObject:TICKSVAL]];
@@ -199,7 +199,7 @@
                         [JPUSHService setAlias:userNmae callbackSelector:nil object:nil];
                         
                         });
-                    
+                
                      [UDefault setObject:data[@"data"][@"ID"] keys:@"kk_userId"];
 
                     NSString * str = [UDefault getObject:@"kk_userId"];

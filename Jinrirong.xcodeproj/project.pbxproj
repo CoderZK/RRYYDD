@@ -351,6 +351,24 @@
 		3CAD8C9820A98CDD00295E21 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CAD8C9720A98CDC00295E21 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3CAD8C9B20A98DAD00295E21 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CAD8C9A20A98DAD00295E21 /* libz.tbd */; };
 		3CAD8C9E20A997BB00295E21 /* XBJinRRPersonInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CAD8C9D20A997BB00295E21 /* XBJinRRPersonInfoModel.m */; };
+		583FC9B5228BF08500747055 /* kkkkDaKaVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 583FC999228BF08100747055 /* kkkkDaKaVCViewController.m */; };
+		583FC9B6228BF08500747055 /* kkkkDaKaListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 583FC99A228BF08200747055 /* kkkkDaKaListVC.m */; };
+		583FC9B7228BF08500747055 /* kkkkDongTaiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 583FC99B228BF08200747055 /* kkkkDongTaiCell.xib */; };
+		583FC9B8228BF08500747055 /* kkkkDaKaVCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 583FC99C228BF08200747055 /* kkkkDaKaVCViewController.xib */; };
+		583FC9B9228BF08500747055 /* kkkkDaKaListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 583FC99F228BF08200747055 /* kkkkDaKaListCell.xib */; };
+		583FC9BA228BF08500747055 /* kkkkDongTaiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 583FC9A2228BF08200747055 /* kkkkDongTaiCell.m */; };
+		583FC9BB228BF08500747055 /* kkkkGongZuoJiHuaListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 583FC9A4228BF08300747055 /* kkkkGongZuoJiHuaListCell.m */; };
+		583FC9BC228BF08500747055 /* kkkkDongTaiDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 583FC9A5228BF08300747055 /* kkkkDongTaiDetailVC.m */; };
+		583FC9BD228BF08500747055 /* kkkkGongZuoJiHuaVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 583FC9A6228BF08300747055 /* kkkkGongZuoJiHuaVC.m */; };
+		583FC9BE228BF08500747055 /* kkkkGongZuoJiHuaListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 583FC9A7228BF08300747055 /* kkkkGongZuoJiHuaListCell.xib */; };
+		583FC9BF228BF08500747055 /* kkkkDongTaiAddVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 583FC9A9228BF08300747055 /* kkkkDongTaiAddVC.xib */; };
+		583FC9C0228BF08500747055 /* kkkkDongTaiVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 583FC9AA228BF08300747055 /* kkkkDongTaiVC.m */; };
+		583FC9C1228BF08500747055 /* kkkkDaKaListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 583FC9AC228BF08400747055 /* kkkkDaKaListCell.m */; };
+		583FC9C2228BF08500747055 /* kkkkDongTaiDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 583FC9AD228BF08400747055 /* kkkkDongTaiDetailVC.xib */; };
+		583FC9C3228BF08500747055 /* kkkkDongTaiAddVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 583FC9AF228BF08400747055 /* kkkkDongTaiAddVC.m */; };
+		583FC9C4228BF08500747055 /* kkkkGongZuoJiHuaListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 583FC9B0228BF08400747055 /* kkkkGongZuoJiHuaListVC.m */; };
+		583FC9C5228BF08500747055 /* kkkkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 583FC9B2228BF08400747055 /* kkkkModel.m */; };
+		583FC9C6228BF08500747055 /* kkkkGongZuoJiHuaVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 583FC9B3228BF08400747055 /* kkkkGongZuoJiHuaVC.xib */; };
 		58552F29228270850084041A /* BaseViewController+PublicMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 58552F1B228270840084041A /* BaseViewController+PublicMethod.m */; };
 		58552F2A228270850084041A /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58552F1C228270840084041A /* BaseTableViewController.m */; };
 		58552F2B228270850084041A /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58552F1D228270850084041A /* BaseNavigationController.m */; };
@@ -1063,6 +1081,35 @@
 		3CAD8C9C20A997BB00295E21 /* XBJinRRPersonInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XBJinRRPersonInfoModel.h; sourceTree = "<group>"; };
 		3CAD8C9D20A997BB00295E21 /* XBJinRRPersonInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XBJinRRPersonInfoModel.m; sourceTree = "<group>"; };
 		3DAAA5FF82971DF2532223D6 /* libPods-Jinrirong.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Jinrirong.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		583FC998228BF08100747055 /* kkkkDongTaiCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kkkkDongTaiCell.h; sourceTree = "<group>"; };
+		583FC999228BF08100747055 /* kkkkDaKaVCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = kkkkDaKaVCViewController.m; sourceTree = "<group>"; };
+		583FC99A228BF08200747055 /* kkkkDaKaListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = kkkkDaKaListVC.m; sourceTree = "<group>"; };
+		583FC99B228BF08200747055 /* kkkkDongTaiCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = kkkkDongTaiCell.xib; sourceTree = "<group>"; };
+		583FC99C228BF08200747055 /* kkkkDaKaVCViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = kkkkDaKaVCViewController.xib; sourceTree = "<group>"; };
+		583FC99D228BF08200747055 /* kkkkModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kkkkModel.h; sourceTree = "<group>"; };
+		583FC99E228BF08200747055 /* kkkkDongTaiDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kkkkDongTaiDetailVC.h; sourceTree = "<group>"; };
+		583FC99F228BF08200747055 /* kkkkDaKaListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = kkkkDaKaListCell.xib; sourceTree = "<group>"; };
+		583FC9A0228BF08200747055 /* kkkkDaKaListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kkkkDaKaListCell.h; sourceTree = "<group>"; };
+		583FC9A1228BF08200747055 /* kkkkGongZuoJiHuaListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kkkkGongZuoJiHuaListCell.h; sourceTree = "<group>"; };
+		583FC9A2228BF08200747055 /* kkkkDongTaiCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = kkkkDongTaiCell.m; sourceTree = "<group>"; };
+		583FC9A3228BF08300747055 /* kkkkGongZuoJiHuaVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kkkkGongZuoJiHuaVC.h; sourceTree = "<group>"; };
+		583FC9A4228BF08300747055 /* kkkkGongZuoJiHuaListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = kkkkGongZuoJiHuaListCell.m; sourceTree = "<group>"; };
+		583FC9A5228BF08300747055 /* kkkkDongTaiDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = kkkkDongTaiDetailVC.m; sourceTree = "<group>"; };
+		583FC9A6228BF08300747055 /* kkkkGongZuoJiHuaVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = kkkkGongZuoJiHuaVC.m; sourceTree = "<group>"; };
+		583FC9A7228BF08300747055 /* kkkkGongZuoJiHuaListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = kkkkGongZuoJiHuaListCell.xib; sourceTree = "<group>"; };
+		583FC9A8228BF08300747055 /* kkkkDaKaListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kkkkDaKaListVC.h; sourceTree = "<group>"; };
+		583FC9A9228BF08300747055 /* kkkkDongTaiAddVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = kkkkDongTaiAddVC.xib; sourceTree = "<group>"; };
+		583FC9AA228BF08300747055 /* kkkkDongTaiVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = kkkkDongTaiVC.m; sourceTree = "<group>"; };
+		583FC9AB228BF08300747055 /* kkkkDongTaiVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kkkkDongTaiVC.h; sourceTree = "<group>"; };
+		583FC9AC228BF08400747055 /* kkkkDaKaListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = kkkkDaKaListCell.m; sourceTree = "<group>"; };
+		583FC9AD228BF08400747055 /* kkkkDongTaiDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = kkkkDongTaiDetailVC.xib; sourceTree = "<group>"; };
+		583FC9AE228BF08400747055 /* kkkkDongTaiAddVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kkkkDongTaiAddVC.h; sourceTree = "<group>"; };
+		583FC9AF228BF08400747055 /* kkkkDongTaiAddVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = kkkkDongTaiAddVC.m; sourceTree = "<group>"; };
+		583FC9B0228BF08400747055 /* kkkkGongZuoJiHuaListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = kkkkGongZuoJiHuaListVC.m; sourceTree = "<group>"; };
+		583FC9B1228BF08400747055 /* kkkkDaKaVCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kkkkDaKaVCViewController.h; sourceTree = "<group>"; };
+		583FC9B2228BF08400747055 /* kkkkModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = kkkkModel.m; sourceTree = "<group>"; };
+		583FC9B3228BF08400747055 /* kkkkGongZuoJiHuaVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = kkkkGongZuoJiHuaVC.xib; sourceTree = "<group>"; };
+		583FC9B4228BF08400747055 /* kkkkGongZuoJiHuaListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kkkkGongZuoJiHuaListVC.h; sourceTree = "<group>"; };
 		58552F1A228270840084041A /* BaseCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCollectionViewController.h; sourceTree = "<group>"; };
 		58552F1B228270840084041A /* BaseViewController+PublicMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseViewController+PublicMethod.m"; sourceTree = "<group>"; };
 		58552F1C228270840084041A /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
@@ -2573,6 +2620,35 @@
 		58552F4E22827A900084041A /* vmvs */ = {
 			isa = PBXGroup;
 			children = (
+				583FC9A0228BF08200747055 /* kkkkDaKaListCell.h */,
+				583FC9AC228BF08400747055 /* kkkkDaKaListCell.m */,
+				583FC99F228BF08200747055 /* kkkkDaKaListCell.xib */,
+				583FC9A8228BF08300747055 /* kkkkDaKaListVC.h */,
+				583FC99A228BF08200747055 /* kkkkDaKaListVC.m */,
+				583FC9B1228BF08400747055 /* kkkkDaKaVCViewController.h */,
+				583FC999228BF08100747055 /* kkkkDaKaVCViewController.m */,
+				583FC99C228BF08200747055 /* kkkkDaKaVCViewController.xib */,
+				583FC9AE228BF08400747055 /* kkkkDongTaiAddVC.h */,
+				583FC9AF228BF08400747055 /* kkkkDongTaiAddVC.m */,
+				583FC9A9228BF08300747055 /* kkkkDongTaiAddVC.xib */,
+				583FC998228BF08100747055 /* kkkkDongTaiCell.h */,
+				583FC9A2228BF08200747055 /* kkkkDongTaiCell.m */,
+				583FC99B228BF08200747055 /* kkkkDongTaiCell.xib */,
+				583FC99E228BF08200747055 /* kkkkDongTaiDetailVC.h */,
+				583FC9A5228BF08300747055 /* kkkkDongTaiDetailVC.m */,
+				583FC9AD228BF08400747055 /* kkkkDongTaiDetailVC.xib */,
+				583FC9AB228BF08300747055 /* kkkkDongTaiVC.h */,
+				583FC9AA228BF08300747055 /* kkkkDongTaiVC.m */,
+				583FC9A1228BF08200747055 /* kkkkGongZuoJiHuaListCell.h */,
+				583FC9A4228BF08300747055 /* kkkkGongZuoJiHuaListCell.m */,
+				583FC9A7228BF08300747055 /* kkkkGongZuoJiHuaListCell.xib */,
+				583FC9B4228BF08400747055 /* kkkkGongZuoJiHuaListVC.h */,
+				583FC9B0228BF08400747055 /* kkkkGongZuoJiHuaListVC.m */,
+				583FC9A3228BF08300747055 /* kkkkGongZuoJiHuaVC.h */,
+				583FC9A6228BF08300747055 /* kkkkGongZuoJiHuaVC.m */,
+				583FC9B3228BF08400747055 /* kkkkGongZuoJiHuaVC.xib */,
+				583FC99D228BF08200747055 /* kkkkModel.h */,
+				583FC9B2228BF08400747055 /* kkkkModel.m */,
 				58552F5222827BC20084041A /* kkkkTabBarVC.h */,
 				58552F5322827BC20084041A /* kkkkTabBarVC.m */,
 				58552F4F22827B8B0084041A /* kkkkPersonVC.h */,
@@ -2719,8 +2795,11 @@
 			files = (
 				A95B01CB226038D300147DE7 /* XBJinRR_NewsCell.xib in Resources */,
 				587296342282A67A00BC1EF5 /* kkkkHomeOneCell.xib in Resources */,
+				583FC9C2228BF08500747055 /* kkkkDongTaiDetailVC.xib in Resources */,
 				045EB4B120C65965002CBB2D /* XBJinRRIncomeFromVipCustomerCell.xib in Resources */,
 				044F301A20B2763200B0E1FB /* XBJinRR_CustomerEditCell.xib in Resources */,
+				583FC9BF228BF08500747055 /* kkkkDongTaiAddVC.xib in Resources */,
+				583FC9B8228BF08500747055 /* kkkkDaKaVCViewController.xib in Resources */,
 				0434BD4F20B6475C002B0C63 /* XBJinRR_GetCodeCell.xib in Resources */,
 				043C7FB420C540B200AA226B /* XBJinRRGetCashDetailInfoCell.xib in Resources */,
 				044800CD20EF5B8F008D5EBA /* README.txt in Resources */,
@@ -2739,10 +2818,13 @@
 				043F024420E7682900BF8D39 /* XBJinRRNewSalaryDesCell.xib in Resources */,
 				0434BD5420B6477C002B0C63 /* XBJinRR_InputTFCell.xib in Resources */,
 				045EB4BE20C67FFC002CBB2D /* XBJinRRCreditReportingListCell.xib in Resources */,
+				583FC9BE228BF08500747055 /* kkkkGongZuoJiHuaListCell.xib in Resources */,
 				043C7F8D20C52AD200AA226B /* XBJinRRCustomerListInfoCell.xib in Resources */,
 				0412425C20C0D3760033A3BF /* accessory_highlight@2x.png in Resources */,
+				583FC9B7228BF08500747055 /* kkkkDongTaiCell.xib in Resources */,
 				04BBAD2720C14F2600A135FB /* XBJinRRCreatSmallPicTableViewCell.xib in Resources */,
 				3C78038920A27E9500F91B98 /* MJRefresh.bundle in Resources */,
+				583FC9B9228BF08500747055 /* kkkkDaKaListCell.xib in Resources */,
 				045EB4B920C676AE002CBB2D /* XBJinRRIncomeFromRecommendCell.xib in Resources */,
 				0445D4F620E078F900938949 /* version_update_icon.png in Resources */,
 				3C3B59F6209A8D0C005DDE98 /* Assets.xcassets in Resources */,
@@ -2752,6 +2834,7 @@
 				045EB4C920C6B70A002CBB2D /* XBJinRRPersonaIForeItemCell.xib in Resources */,
 				043F023F20E75B0000BF8D39 /* XBJinRRBigBankCardCell.xib in Resources */,
 				5872963C2282BC9900BC1EF5 /* kkkkCell.xib in Resources */,
+				583FC9C6228BF08500747055 /* kkkkGongZuoJiHuaVC.xib in Resources */,
 				587296412282D84A00BC1EF5 /* RYD.db in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2809,6 +2892,7 @@
 				049F2B1020BE52E800AD179C /* XBJinRR_LoadShareSalaryDescriptionCell.m in Sources */,
 				3C3B5A31209A94EE005DDE98 /* XBJinRRPersonalViewController.m in Sources */,
 				046D85C420CDFC2A00E07348 /* XBJinRRNewUserHelpSectionHeaderView.m in Sources */,
+				583FC9C4228BF08500747055 /* kkkkGongZuoJiHuaListVC.m in Sources */,
 				58552F57228284E40084041A /* kkkkMoneyVC.m in Sources */,
 				04063D6620BFFF640042CE5E /* XBJinRR_LookLoanCustomerLabelCell.m in Sources */,
 				049F2B6D20BEB22100AD179C /* SGSheetMenu.m in Sources */,
@@ -2820,6 +2904,7 @@
 				045EB4A620C633A2002CBB2D /* XBJinRRSourceOfIncomeViewController.m in Sources */,
 				043C7F8C20C52AD200AA226B /* XBJinRRCustomerListInfoCell.m in Sources */,
 				045EB4C120C68963002CBB2D /* XBJinRRPromotdataModel.m in Sources */,
+				583FC9C5228BF08500747055 /* kkkkModel.m in Sources */,
 				3C5BD8EE20A18FED004367E4 /* XBJinRRMoneyMenu.m in Sources */,
 				3C5BD8F420A19A5F004367E4 /* XBJinRRTypeMenu.m in Sources */,
 				0451EDE820BBED3C00CDEB21 /* XBJinRR_LoadListCell.m in Sources */,
@@ -2896,6 +2981,7 @@
 				043C7FA320C5357200AA226B /* MMPopupCategory.m in Sources */,
 				04BBAD2620C14F2600A135FB /* XBJinRRCreatSmallPicTableViewCell.m in Sources */,
 				04063D5620BF8BA20042CE5E /* UIViewController+YPTabBarController.m in Sources */,
+				583FC9BA228BF08500747055 /* kkkkDongTaiCell.m in Sources */,
 				0457F15120E9AB6300D223B3 /* XBEDAILoanTopCell.m in Sources */,
 				040AA22F20C775B400151650 /* XBJinRRCredibilityModel.m in Sources */,
 				58552F43228270D20084041A /* UIButton+Badge.m in Sources */,
@@ -2907,6 +2993,7 @@
 				3C8037AA20ABCA180040A542 /* ShareAndPromotionViewController.m in Sources */,
 				049F2B4320BE93A100AD179C /* XBJinRR_LoadShareMyPosterImageViewController.m in Sources */,
 				3C360AEA20A053D500649912 /* SDWebImageDownloader.m in Sources */,
+				583FC9B6228BF08500747055 /* kkkkDaKaListVC.m in Sources */,
 				3C78038320A27E9500F91B98 /* MJRefreshBackGifFooter.m in Sources */,
 				3C360A6220A04C9700649912 /* XBJinRRHomBannerCell.m in Sources */,
 				3C360AF620A053D500649912 /* UIImage+MultiFormat.m in Sources */,
@@ -2930,6 +3017,7 @@
 				3C8037D620ABDB340040A542 /* TTTAttributedLabel.m in Sources */,
 				3C360A9C20A04FF100649912 /* NSObject+MJKeyValue.m in Sources */,
 				58552F5A2282868C0084041A /* kkkkMoneyTwoVC.m in Sources */,
+				583FC9BC228BF08500747055 /* kkkkDongTaiDetailVC.m in Sources */,
 				A9C5CF94226042610000DFF6 /* XBJinRRNewsSectionView.m in Sources */,
 				3C8037CE20ABCCC50040A542 /* LDImageAndTitleView.m in Sources */,
 				045EB4C420C691A3002CBB2D /* XBJinRRMakeincomeModel.m in Sources */,
@@ -3008,9 +3096,11 @@
 				3C3B5A45209AA176005DDE98 /* AFURLRequestSerialization.m in Sources */,
 				043C7FAA20C535EB00AA226B /* ImageBtn.m in Sources */,
 				3C360A7620A04D7900649912 /* TAPageControl.m in Sources */,
+				583FC9C3228BF08500747055 /* kkkkDongTaiAddVC.m in Sources */,
 				3C5066C220AADFE70024C67B /* XBJinRRMyMessageMainCell.m in Sources */,
 				3C8FD06D2155D1C6007A1892 /* XBJinRRChangJiePayViewController.m in Sources */,
 				043C7F6620C4BCFF00AA226B /* XBJinRRcreditcarddetaileViewController.m in Sources */,
+				583FC9C1228BF08500747055 /* kkkkDaKaListCell.m in Sources */,
 				3C3B5A42209AA176005DDE98 /* AFHTTPSessionManager.m in Sources */,
 				044F300F20B25ED900B0E1FB /* XBJinRR_CustomerView.m in Sources */,
 				043C7FA720C5357200AA226B /* MMSheetView.m in Sources */,
@@ -3065,6 +3155,7 @@
 				3C5066B620AAD0000024C67B /* XBJinRRCheckCreditViewController.m in Sources */,
 				043F024320E7682800BF8D39 /* XBJinRRNewSalaryDesCell.m in Sources */,
 				3C360B0720A05AB300649912 /* FLAnimatedImage.m in Sources */,
+				583FC9BD228BF08500747055 /* kkkkGongZuoJiHuaVC.m in Sources */,
 				3C38E5C521523CEB00EC9AA8 /* XBJinRRWebViewUrlViewController.m in Sources */,
 				3C3B5A44209AA176005DDE98 /* AFSecurityPolicy.m in Sources */,
 				3C360A7520A04D7900649912 /* TADotView.m in Sources */,
@@ -3088,6 +3179,7 @@
 				3C78038D20A27E9500F91B98 /* UIScrollView+MJRefresh.m in Sources */,
 				58552F2F228270850084041A /* BaseCollectionViewController.m in Sources */,
 				3C360AF320A053D500649912 /* UIButton+WebCache.m in Sources */,
+				583FC9B5228BF08500747055 /* kkkkDaKaVCViewController.m in Sources */,
 				3CAD8C8B20A961D300295E21 /* SecurityUtil.m in Sources */,
 				04063D5D20BF8BBB0042CE5E /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				3C360A9A20A04FF100649912 /* NSObject+MJClass.m in Sources */,
@@ -3118,7 +3210,9 @@
 				0451EDE520BBE91C00CDEB21 /* XBJinRR_RecommendsLoadModel.m in Sources */,
 				049F2B6B20BEB22100AD179C /* SGBaseMenu.m in Sources */,
 				3C8037A420ABB54B0040A542 /* XBJinRRMyMessageCell.m in Sources */,
+				583FC9C0228BF08500747055 /* kkkkDongTaiVC.m in Sources */,
 				049F2B0D20BE52AB00AD179C /* XBJinRR_LoadShareProductCell.m in Sources */,
+				583FC9BB228BF08500747055 /* kkkkGongZuoJiHuaListCell.m in Sources */,
 				040BF02B20C26F3D009617D7 /* XBJinRRBankCardModel.m in Sources */,
 				3C5066AA20AAB9350024C67B /* XBJinRRAgencyMoneyCell.m in Sources */,
 				3C360AE920A053D500649912 /* SDWebImageCompat.m in Sources */,
@@ -3294,7 +3388,7 @@
 					"$(inherited)",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ganzheapp.rongyidai;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rryydd.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = rongedai;
@@ -3341,7 +3435,7 @@
 					"$(inherited)",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ganzheapp.rongyidai;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rryydd.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = ryddddis;

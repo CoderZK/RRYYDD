@@ -10,7 +10,9 @@
 #import "kkkkHomeOneCell.h"
 #import "kkkkHomeTwoCell.h"
 #import "kkkkCell.h"
-
+#import "kkkkDongTaiVC.h"
+#import "kkkkDaKaVCViewController.h"
+#import "kkkkGongZuoJiHuaListVC.h"
 @interface kkkkHomeVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *tableView;
 @end
@@ -28,14 +30,13 @@
     
     
     [self.tableView registerNib:[UINib nibWithNibName:@"kkkkHomeOneCell" bundle:nil] forCellReuseIdentifier:@"cellone"];
-     [self.tableView registerNib:[UINib nibWithNibName:@"kkkkCell" bundle:nil] forCellReuseIdentifier:@"cellThree"];
     [self.tableView registerClass:[kkkkHomeTwoCell class] forCellReuseIdentifier:@"twoCell"];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -72,9 +73,28 @@
         return cell;
     }else if (indexPath.section == 1){
         kkkkHomeTwoCell * cell =[tableView dequeueReusableCellWithIdentifier:@"twoCell" forIndexPath:indexPath];
+        
+        __weak typeof(self) weakSelf = self;
+        
+//        __weak kkkkHomeVC * weakSelf = self;
+        
+        
         cell.didIndexBlock = ^(NSInteger index) {
           
-            NSLog(@"\n----%d",index);
+            if (index == 0) {
+                kkkkDongTaiVC * vc =[[kkkkDongTaiVC alloc] init];
+                vc.hidesBottomBarWhenPushed = YES;
+                [weakSelf.navigationController pushViewController:vc animated:YES];
+            }else if (index == 1) {
+                
+                kkkkDaKaVCViewController * vc =[[kkkkDaKaVCViewController alloc] init];
+                vc.hidesBottomBarWhenPushed = YES;
+                [weakSelf.navigationController pushViewController:vc animated:YES];
+            }else if (index == 2) {
+                kkkkGongZuoJiHuaListVC * vc =[[kkkkGongZuoJiHuaListVC alloc] init];
+                vc.hidesBottomBarWhenPushed = YES;
+                [weakSelf.navigationController pushViewController:vc animated:YES];
+            }
 
             
         };
@@ -82,8 +102,7 @@
         return cell;
     }else if (indexPath.section == 2) {
         
-        kkkkHomeOneCell * cell =[tableView dequeueReusableCellWithIdentifier:@"cellThree" forIndexPath:indexPath];
-        return cell;
+     
         
     }
     kkkkHomeOneCell * cell =[tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];

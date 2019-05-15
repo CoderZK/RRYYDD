@@ -32,10 +32,15 @@
 
 @implementation kkkkMineHaiBaoVC
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self getLoadShareMyPosterWithID];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.ID = @"1";
+    self.ID = @"6";
     
     self.view.backgroundColor = [UIColor whiteColor];
     [self setNavWithTitle:@"我的专属海报" isShowBack:YES];

@@ -67,10 +67,10 @@
     [XBUMManager initIQKeyboardManager];
     
     //真实界面
-    self.window.rootViewController = [[XBJinRRBaseTabbarViewController alloc]init];
+//    self.window.rootViewController = [[XBJinRRBaseTabbarViewController alloc]init];
     
     //假界面
-//    self.window.rootViewController = [[kkkkTabBarVC alloc] init];
+    self.window.rootViewController = [[kkkkTabBarVC alloc] init];
     
     
     [self checkNewVersionWithAppid:@[@"1462607266",@"1462613312",@"1462843477"] atViewController:self.window.rootViewController];
@@ -299,6 +299,7 @@
                                              
                                              if (dic)
                                              {
+                                                 // 此处应该改是用本地版本的,此处造成的错误必须用 上架版本的buildVison 大于等于 企业级的12
                                                  if ([[NSString stringWithFormat:@"%@",dic[@"data"][@"buildVersion"]] isEqualToString:@"0.1"]) {
                                                      //服务器build版本
                                                      NSString * version = [dic[@"data"][@"buildVersionNo"] stringByReplacingOccurrencesOfString:@"." withString:@""];

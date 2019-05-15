@@ -26,6 +26,7 @@
 #import "UIViewController+AlertShow.h"
 #import "FMDBSingle.h"
 #import "FYSignleTool.h"
+#import "kkkkModel.h"
 
 //状态栏
 #define sstatusHeight [[UIApplication sharedApplication] statusBarFrame].size.height

@@ -1,20 +1,20 @@
 //
-//  kkkkRenWuVC.m
+//  kkkkXiangMuListVC.m
 //  Jinrirong
 //
-//  Created by zk on 2019/5/15.
+//  Created by zk on 2019/5/17.
 //  Copyright © 2019 ahxb. All rights reserved.
 //
 
-#import "kkkkRenWuVC.h"
+#import "kkkkXiangMuListVC.h"
 #import "kkkkGongZuoJiHuaListCell.h"
-#import "kkkkAddRenWuVC.h"
-@interface kkkkRenWuVC ()<UITableViewDelegate,UITableViewDataSource>
+#import "kkkkAddXiangMuVC.h"
+@interface kkkkXiangMuListVC ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)UITableView *tableView;
 @property(nonatomic,strong)NSMutableArray *dataArray;
 @end
 
-@implementation kkkkRenWuVC
+@implementation kkkkXiangMuListVC
 
 - (NSMutableArray *)dataArray {
     if (_dataArray == nil) {
@@ -30,7 +30,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"任务列表";
+    self.navigationItem.title = @"项目列表列表";
     
     
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
@@ -47,7 +47,7 @@
     UIButton * button =[UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(0, 0, 40, 40);
     
-    [button setTitle:@"添加任务" forState:UIControlStateNormal];
+    [button setTitle:@"添加项目" forState:UIControlStateNormal];
     button.titleLabel.font = [UIFont systemFontOfSize:14];
     [button setTitleColor:WhiteColor forState:UIControlStateNormal];
     button.layer.cornerRadius = 0;
@@ -59,7 +59,7 @@
 
 
 - (void)add {
-    kkkkAddRenWuVC * vc =[[kkkkAddRenWuVC alloc] init];
+    kkkkAddXiangMuVC * vc =[[kkkkAddXiangMuVC alloc] init];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
     
@@ -70,7 +70,7 @@
     FMDatabase * db = [FMDBSingle shareFMDB].fd;
     BOOL isOpen = [db open];
     
-    NSString * sql = [NSString stringWithFormat:@"select *from kkkk_renWu where userId='%@'",[UDefault getObject:@"phone"]];
+    NSString * sql = [NSString stringWithFormat:@"select *from kkkk_xiangMu where userId='%@'",[UDefault getObject:@"phone"]];
     if (isOpen) {
         
         FMResultSet * result = [db executeQuery:sql];
@@ -82,6 +82,7 @@
             model.userId = [result stringForColumn:@"userId"];
             model.title = [result stringForColumn:@"title"];
             model.content = [result stringForColumn:@"content"];
+            model.names = [result stringForColumn:@"content"];
             model.status = [result intForColumn:@"status"];
             
             [self.dataArray insertObject:model atIndex:0];
@@ -108,8 +109,8 @@
     kkkkGongZuoJiHuaListCell * cell =[tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
     kkkkModel * model = self.dataArray[indexPath.row];
-    cell.titleLB.text = [NSString stringWithFormat:@"任务题目: %@",model.title];
-    cell.contentLB.text = [NSString stringWithFormat:@"任务内容: %@",model.content];
+    cell.titleLB.text = [NSString stringWithFormat:@"项目题目: %@",model.title];
+    cell.contentLB.text = [NSString stringWithFormat:@"项目内容: %@\n%@",model.content,model.names];
     [cell.statusBT addTarget:self action:@selector(action:) forControlEvents:UIControlEventTouchUpInside];
     cell.statusBT.tag = indexPath.row;
     if (model.status == 0) {
@@ -140,7 +141,7 @@
         FMDatabase * db = [FMDBSingle shareFMDB].fd;
         BOOL isOpen = [db open];
         kkkkModel * model = self.dataArray[button.tag];
-        NSString * sql = [NSString stringWithFormat:@"update  kkkk_renWu set status=1 where userId='%@'",model.ID];
+        NSString * sql = [NSString stringWithFormat:@"update  kkkk_xiangMu set status=1 where userId='%@'",model.ID];
         
         if (isOpen){
             BOOL isOk = [db executeUpdate:sql];
@@ -169,16 +170,5 @@
     
 }
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
 @end
-
-

@@ -400,6 +400,9 @@
 		5872963C2282BC9900BC1EF5 /* kkkkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5872963A2282BC9900BC1EF5 /* kkkkCell.xib */; };
 		5872963F2282C7F300BC1EF5 /* kkkkNewsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5872963E2282C7F300BC1EF5 /* kkkkNewsVC.m */; };
 		587296412282D84A00BC1EF5 /* RYD.db in Resources */ = {isa = PBXBuildFile; fileRef = 587296402282D84A00BC1EF5 /* RYD.db */; };
+		58C2FA01228E8E9F003070AE /* kkkkXiangMuListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C2FA00228E8E9F003070AE /* kkkkXiangMuListVC.m */; };
+		58C2FA05228E8EB9003070AE /* kkkkAddXiangMuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C2FA03228E8EB9003070AE /* kkkkAddXiangMuVC.m */; };
+		58C2FA06228E8EB9003070AE /* kkkkAddXiangMuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58C2FA04228E8EB9003070AE /* kkkkAddXiangMuVC.xib */; };
 		58D4F93F227FE21200C7653A /* UMMobClick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D4F93D227FDC4900C7653A /* UMMobClick.framework */; };
 		58D4F940227FE4E400C7653A /* JhtMarquee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0457347020C8B6A800919F64 /* JhtMarquee.framework */; };
 		A95B01C02260314600147DE7 /* XBJinRR_NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A95B01BE2260314600147DE7 /* XBJinRR_NewsViewController.m */; };
@@ -1171,6 +1174,11 @@
 		5872963D2282C7F300BC1EF5 /* kkkkNewsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kkkkNewsVC.h; sourceTree = "<group>"; };
 		5872963E2282C7F300BC1EF5 /* kkkkNewsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = kkkkNewsVC.m; sourceTree = "<group>"; };
 		587296402282D84A00BC1EF5 /* RYD.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = RYD.db; sourceTree = "<group>"; };
+		58C2F9FF228E8E9F003070AE /* kkkkXiangMuListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kkkkXiangMuListVC.h; sourceTree = "<group>"; };
+		58C2FA00228E8E9F003070AE /* kkkkXiangMuListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = kkkkXiangMuListVC.m; sourceTree = "<group>"; };
+		58C2FA02228E8EB9003070AE /* kkkkAddXiangMuVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kkkkAddXiangMuVC.h; sourceTree = "<group>"; };
+		58C2FA03228E8EB9003070AE /* kkkkAddXiangMuVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = kkkkAddXiangMuVC.m; sourceTree = "<group>"; };
+		58C2FA04228E8EB9003070AE /* kkkkAddXiangMuVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = kkkkAddXiangMuVC.xib; sourceTree = "<group>"; };
 		58D4F93D227FDC4900C7653A /* UMMobClick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UMMobClick.framework; path = Pods/UMengAnalytics/umsdk_IOS_analyics_idfa_v4.2.4/UMMobClick.framework; sourceTree = "<group>"; };
 		58D4F941227FFC8600C7653A /* Jinrirong.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Jinrirong.entitlements; sourceTree = "<group>"; };
 		A95B01BD2260314600147DE7 /* XBJinRR_NewsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XBJinRR_NewsViewController.h; sourceTree = "<group>"; };
@@ -2684,6 +2692,11 @@
 				583FC9CA228C130100747055 /* kkkkAddRenWuVC.h */,
 				583FC9CB228C130100747055 /* kkkkAddRenWuVC.m */,
 				583FC9CC228C130200747055 /* kkkkAddRenWuVC.xib */,
+				58C2F9FF228E8E9F003070AE /* kkkkXiangMuListVC.h */,
+				58C2FA00228E8E9F003070AE /* kkkkXiangMuListVC.m */,
+				58C2FA02228E8EB9003070AE /* kkkkAddXiangMuVC.h */,
+				58C2FA03228E8EB9003070AE /* kkkkAddXiangMuVC.m */,
+				58C2FA04228E8EB9003070AE /* kkkkAddXiangMuVC.xib */,
 			);
 			path = vmvs;
 			sourceTree = "<group>";
@@ -2836,6 +2849,7 @@
 				0412425C20C0D3760033A3BF /* accessory_highlight@2x.png in Resources */,
 				583FC9B7228BF08500747055 /* kkkkDongTaiCell.xib in Resources */,
 				04BBAD2720C14F2600A135FB /* XBJinRRCreatSmallPicTableViewCell.xib in Resources */,
+				58C2FA06228E8EB9003070AE /* kkkkAddXiangMuVC.xib in Resources */,
 				3C78038920A27E9500F91B98 /* MJRefresh.bundle in Resources */,
 				583FC9B9228BF08500747055 /* kkkkDaKaListCell.xib in Resources */,
 				045EB4B920C676AE002CBB2D /* XBJinRRIncomeFromRecommendCell.xib in Resources */,
@@ -3079,6 +3093,7 @@
 				3C360A9720A04FF100649912 /* MJProperty.m in Sources */,
 				3C360AF420A053D500649912 /* UIImage+ForceDecode.m in Sources */,
 				3C8037D920ABE08D0040A542 /* XBJinRRSettingViewController.m in Sources */,
+				58C2FA05228E8EB9003070AE /* kkkkAddXiangMuVC.m in Sources */,
 				587296372282A97900BC1EF5 /* kkkkHomeTwoCell.m in Sources */,
 				3C78038820A27E9500F91B98 /* MJRefreshStateHeader.m in Sources */,
 				04BBAD1F20C13E8F00A135FB /* XBJinRRCreatCardBigPicCell.m in Sources */,
@@ -3147,6 +3162,7 @@
 				04BBAD2220C13EBC00A135FB /* XBJinRRCreatBigPicView.m in Sources */,
 				0412425E20C0D3760033A3BF /* LrdSuperMenu.m in Sources */,
 				3C3B5A6A209AA380005DDE98 /* XBJinRRNetworkApiManager.m in Sources */,
+				58C2FA01228E8E9F003070AE /* kkkkXiangMuListVC.m in Sources */,
 				3C66D24920A1218B00C4F68F /* XMAutoScrollTextView.m in Sources */,
 				3C3B5A79209AA602005DDE98 /* SVIndefiniteAnimatedView.m in Sources */,
 				3C3B5A5E209AA183005DDE98 /* AFImageDownloader.m in Sources */,

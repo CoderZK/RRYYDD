@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)NSString *des;
 @property(nonatomic,strong)NSString *time;
 @property(nonatomic,strong)NSString *timeTwo;
+@property(nonatomic,strong)NSString *names;
 
 
 @property(nonatomic,assign)NSInteger scan;

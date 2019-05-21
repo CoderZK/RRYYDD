@@ -15,6 +15,7 @@
 #import "kkkkGongZuoJiHuaListVC.h"
 #import "kkkkRenWuVC.h"
 #import "kkkkXiangMuListVC.h"
+#import "kkkkRiBaoListVC.h"
 @interface kkkkHomeVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *tableView;
 @end
@@ -102,6 +103,10 @@
                 [weakSelf.navigationController pushViewController:vc animated:YES];
             }else if (index == 4) {
                 kkkkXiangMuListVC * vc =[[kkkkXiangMuListVC alloc] init];
+                vc.hidesBottomBarWhenPushed = YES;
+                [weakSelf.navigationController pushViewController:vc animated:YES];
+            }else if (index == 5) {
+                kkkkRiBaoListVC * vc =[[kkkkRiBaoListVC alloc] init];
                 vc.hidesBottomBarWhenPushed = YES;
                 [weakSelf.navigationController pushViewController:vc animated:YES];
             }

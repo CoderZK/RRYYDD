@@ -30,7 +30,7 @@
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="feV-b6-q3b">
                         <rect key="frame" x="10" y="187.5" width="476" height="1"/>
-                        <color key="backgroundColor" red="0.70588235290000001" green="0.70588235290000001" blue="0.70588235290000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="0.62267365679999997" blue="0.11872862300000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="Mjv-UZ-z9B"/>
                         </constraints>
@@ -88,7 +88,7 @@
                 <outlet property="scanBt" destination="dTs-dH-6sX" id="Azg-ZP-BVA"/>
                 <outlet property="titleLB" destination="fG8-dK-z18" id="wdg-om-m98"/>
             </connections>
-            <point key="canvasLocation" x="-82.608695652173921" y="82.700892857142847"/>
+            <point key="canvasLocation" x="-82.608695652173921" y="82.03125"/>
         </tableViewCell>
     </objects>
 </document>

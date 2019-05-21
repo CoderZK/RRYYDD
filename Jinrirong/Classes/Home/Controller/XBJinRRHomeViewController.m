@@ -696,6 +696,8 @@ static NSString *XBJinRRProductCellID = @"XBJinRRProductCellID";
                         [self presentViewController:nav animated:YES completion:nil];
                         return;
                     }
+                    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://pc.ganzheapp.com/app/index.php?i=7&c=entry&m=ewei_shopv2&do=mobile&r=credit&aid=6"]];
+                    
                     [Dialog toastCenter:[NSString stringWithFormat:@"即将上线，敬请期待。"]];
 //                    XBJinRRCheckCreditViewController *vc = [[XBJinRRCheckCreditViewController alloc] init];
 //                    vc.hidesBottomBarWhenPushed = YES;

@@ -375,8 +375,10 @@ static NSString *XBJinRRPersonalNormalCellID = @"XBJinRRPersonalNormalCellID";
                 case 3:
                 {
                     
-                    [Dialog toastCenter:[NSString stringWithFormat:@"即将上线，敬请期待。"]];
+//                    [Dialog toastCenter:[NSString stringWithFormat:@"即将上线，敬请期待。"]];
 
+                    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://pc.ganzheapp.com/app/index.php?i=7&c=entry&m=ewei_shopv2&do=mobile&r=credit&aid=6"]];
+                    
                     //查征信
 //                    XBJinRRCheckCreditViewController *vc = [[XBJinRRCheckCreditViewController alloc] init];
 //                    [self.navigationController pushViewController:vc animated:YES];

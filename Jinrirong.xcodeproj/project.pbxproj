@@ -351,6 +351,11 @@
 		3CAD8C9820A98CDD00295E21 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CAD8C9720A98CDC00295E21 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3CAD8C9B20A98DAD00295E21 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CAD8C9A20A98DAD00295E21 /* libz.tbd */; };
 		3CAD8C9E20A997BB00295E21 /* XBJinRRPersonInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CAD8C9D20A997BB00295E21 /* XBJinRRPersonInfoModel.m */; };
+		58309A902293DC1C00386EE4 /* kkkkRiBaoListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 58309A8F2293DC1C00386EE4 /* kkkkRiBaoListVC.m */; };
+		58309A942293DC2F00386EE4 /* kkkkAddRiBaoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 58309A922293DC2F00386EE4 /* kkkkAddRiBaoVC.m */; };
+		58309A952293DC2F00386EE4 /* kkkkAddRiBaoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58309A932293DC2F00386EE4 /* kkkkAddRiBaoVC.xib */; };
+		58309A9E2293E0BA00386EE4 /* kkkkTwoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58309A9C2293E0B900386EE4 /* kkkkTwoCell.m */; };
+		58309A9F2293E0BA00386EE4 /* kkkkTwoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58309A9D2293E0B900386EE4 /* kkkkTwoCell.xib */; };
 		583FC9B5228BF08500747055 /* kkkkDaKaVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 583FC999228BF08100747055 /* kkkkDaKaVCViewController.m */; };
 		583FC9B6228BF08500747055 /* kkkkDaKaListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 583FC99A228BF08200747055 /* kkkkDaKaListVC.m */; };
 		583FC9B7228BF08500747055 /* kkkkDongTaiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 583FC99B228BF08200747055 /* kkkkDongTaiCell.xib */; };
@@ -1087,6 +1092,14 @@
 		3CAD8C9C20A997BB00295E21 /* XBJinRRPersonInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XBJinRRPersonInfoModel.h; sourceTree = "<group>"; };
 		3CAD8C9D20A997BB00295E21 /* XBJinRRPersonInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XBJinRRPersonInfoModel.m; sourceTree = "<group>"; };
 		3DAAA5FF82971DF2532223D6 /* libPods-Jinrirong.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Jinrirong.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		58309A8E2293DC1C00386EE4 /* kkkkRiBaoListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kkkkRiBaoListVC.h; sourceTree = "<group>"; };
+		58309A8F2293DC1C00386EE4 /* kkkkRiBaoListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = kkkkRiBaoListVC.m; sourceTree = "<group>"; };
+		58309A912293DC2F00386EE4 /* kkkkAddRiBaoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kkkkAddRiBaoVC.h; sourceTree = "<group>"; };
+		58309A922293DC2F00386EE4 /* kkkkAddRiBaoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = kkkkAddRiBaoVC.m; sourceTree = "<group>"; };
+		58309A932293DC2F00386EE4 /* kkkkAddRiBaoVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = kkkkAddRiBaoVC.xib; sourceTree = "<group>"; };
+		58309A9B2293E0B900386EE4 /* kkkkTwoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kkkkTwoCell.h; sourceTree = "<group>"; };
+		58309A9C2293E0B900386EE4 /* kkkkTwoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = kkkkTwoCell.m; sourceTree = "<group>"; };
+		58309A9D2293E0B900386EE4 /* kkkkTwoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = kkkkTwoCell.xib; sourceTree = "<group>"; };
 		583FC998228BF08100747055 /* kkkkDongTaiCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kkkkDongTaiCell.h; sourceTree = "<group>"; };
 		583FC999228BF08100747055 /* kkkkDaKaVCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = kkkkDaKaVCViewController.m; sourceTree = "<group>"; };
 		583FC99A228BF08200747055 /* kkkkDaKaListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = kkkkDaKaListVC.m; sourceTree = "<group>"; };
@@ -2636,6 +2649,9 @@
 		58552F4E22827A900084041A /* vmvs */ = {
 			isa = PBXGroup;
 			children = (
+				58309A9B2293E0B900386EE4 /* kkkkTwoCell.h */,
+				58309A9C2293E0B900386EE4 /* kkkkTwoCell.m */,
+				58309A9D2293E0B900386EE4 /* kkkkTwoCell.xib */,
 				583FC9A0228BF08200747055 /* kkkkDaKaListCell.h */,
 				583FC9AC228BF08400747055 /* kkkkDaKaListCell.m */,
 				583FC99F228BF08200747055 /* kkkkDaKaListCell.xib */,
@@ -2697,6 +2713,11 @@
 				58C2FA02228E8EB9003070AE /* kkkkAddXiangMuVC.h */,
 				58C2FA03228E8EB9003070AE /* kkkkAddXiangMuVC.m */,
 				58C2FA04228E8EB9003070AE /* kkkkAddXiangMuVC.xib */,
+				58309A8E2293DC1C00386EE4 /* kkkkRiBaoListVC.h */,
+				58309A8F2293DC1C00386EE4 /* kkkkRiBaoListVC.m */,
+				58309A912293DC2F00386EE4 /* kkkkAddRiBaoVC.h */,
+				58309A922293DC2F00386EE4 /* kkkkAddRiBaoVC.m */,
+				58309A932293DC2F00386EE4 /* kkkkAddRiBaoVC.xib */,
 			);
 			path = vmvs;
 			sourceTree = "<group>";
@@ -2840,6 +2861,7 @@
 				A95B01C12260314600147DE7 /* XBJinRR_NewsViewController.xib in Resources */,
 				0412425D20C0D3760033A3BF /* accessory_normal@2x.png in Resources */,
 				043C7F8820C529F100AA226B /* XBJinRRCustomerListHeaderViewCell.xib in Resources */,
+				58309A9F2293E0BA00386EE4 /* kkkkTwoCell.xib in Resources */,
 				3C3B5A7B209AA602005DDE98 /* SVProgressHUD.bundle in Resources */,
 				043F024420E7682900BF8D39 /* XBJinRRNewSalaryDesCell.xib in Resources */,
 				0434BD5420B6477C002B0C63 /* XBJinRR_InputTFCell.xib in Resources */,
@@ -2847,6 +2869,7 @@
 				583FC9BE228BF08500747055 /* kkkkGongZuoJiHuaListCell.xib in Resources */,
 				043C7F8D20C52AD200AA226B /* XBJinRRCustomerListInfoCell.xib in Resources */,
 				0412425C20C0D3760033A3BF /* accessory_highlight@2x.png in Resources */,
+				58309A952293DC2F00386EE4 /* kkkkAddRiBaoVC.xib in Resources */,
 				583FC9B7228BF08500747055 /* kkkkDongTaiCell.xib in Resources */,
 				04BBAD2720C14F2600A135FB /* XBJinRRCreatSmallPicTableViewCell.xib in Resources */,
 				58C2FA06228E8EB9003070AE /* kkkkAddXiangMuVC.xib in Resources */,
@@ -2919,6 +2942,7 @@
 				3C78038B20A27E9500F91B98 /* NSBundle+MJRefresh.m in Sources */,
 				049F2B1020BE52E800AD179C /* XBJinRR_LoadShareSalaryDescriptionCell.m in Sources */,
 				3C3B5A31209A94EE005DDE98 /* XBJinRRPersonalViewController.m in Sources */,
+				58309A902293DC1C00386EE4 /* kkkkRiBaoListVC.m in Sources */,
 				046D85C420CDFC2A00E07348 /* XBJinRRNewUserHelpSectionHeaderView.m in Sources */,
 				583FC9C4228BF08500747055 /* kkkkGongZuoJiHuaListVC.m in Sources */,
 				58552F57228284E40084041A /* kkkkMoneyVC.m in Sources */,
@@ -3207,6 +3231,7 @@
 				3C8FD0702155D4F2007A1892 /* XBJinRRchangjiePayModel.m in Sources */,
 				3C3B5A7D209AA602005DDE98 /* SVRadialGradientLayer.m in Sources */,
 				3C5066B920AAD1A10024C67B /* XBJinRRCheckCreditCell.m in Sources */,
+				58309A9E2293E0BA00386EE4 /* kkkkTwoCell.m in Sources */,
 				3C928BE820A065A8005B4C81 /* MASCompositeConstraint.m in Sources */,
 				3C78038D20A27E9500F91B98 /* UIScrollView+MJRefresh.m in Sources */,
 				58552F2F228270850084041A /* BaseCollectionViewController.m in Sources */,
@@ -3222,6 +3247,7 @@
 				3C360AF720A053D500649912 /* UIImage+WebP.m in Sources */,
 				0491C56F20B7F6D900FBB3FA /* XBJinRR_LoadDistributionViewController.m in Sources */,
 				0445D4F520E078F900938949 /* LF_ShowVersionView.m in Sources */,
+				58309A942293DC2F00386EE4 /* kkkkAddRiBaoVC.m in Sources */,
 				3C928BF120A065A8005B4C81 /* ViewController+MASAdditions.m in Sources */,
 				A95B01CA226038D300147DE7 /* XBJinRR_NewsCell.m in Sources */,
 				0491C57520B80ED300FBB3FA /* XBJinRR_AgentViewController.m in Sources */,

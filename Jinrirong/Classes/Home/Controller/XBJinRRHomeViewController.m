@@ -302,49 +302,66 @@ static NSString *XBJinRRProductCellID = @"XBJinRRProductCellID";
 
 - (void)requestData
 {
-    WS(bself);
-    dispatch_group_t group = dispatch_group_create();
-    dispatch_group_enter(group);
     [self isnoreadmsg:^(BOOL isSuccess) {
-        if (isSuccess) {
-            dispatch_group_leave(group);
-        }
+        NSLog(@"=======\n====\n===%@",[NSThread currentThread]);
     }];
-    dispatch_group_enter(group);
-    [self getAdsWithAid:^(BOOL isSuccess) {
-        if (isSuccess) {
-            dispatch_group_leave(group);
-        }
-    }];
-    dispatch_group_enter(group);
-    [self getNoticeWithBlock:^(BOOL isSuccess) {
-        if (isSuccess) {
-            dispatch_group_leave(group);
-        }
-    }];
-    dispatch_group_enter(group);
-    [self getCateWithBlock:^(BOOL isSuccess) {
-        if (isSuccess) {
-            dispatch_group_leave(group);
-        }
-    }];
-    dispatch_group_enter(group);
-    [self getItemsWithIsrec:^(BOOL isSuccess) {
-        if (isSuccess) {
-            dispatch_group_leave(group);
-        }
-    }];
-    dispatch_group_enter(group);
-    [self getItemsWithIsrect:^(BOOL isSuccess) {
-        if (isSuccess) {
-            dispatch_group_leave(group);
-        }
-    }];
-    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
-        [bself.tableView.mj_header endRefreshing];
-        [bself.tableView.mj_footer endRefreshing];
-        [bself.tableView reloadData];
-    });
+    
+    [self getAdsWithAid:^(BOOL isSuccess) {}];
+    
+    [self getNoticeWithBlock:^(BOOL isSuccess) {}];
+    
+    [self getCateWithBlock:^(BOOL isSuccess) {}];
+    [self getItemsWithIsrec:^(BOOL isSuccess) {}];
+    [self getItemsWithIsrect:^(BOOL isSuccess) {}];
+    
+    
+    //    WS(bself);
+    //    dispatch_group_t group = dispatch_group_create();
+    //    dispatch_group_enter(group);
+    //    [self isnoreadmsg:^(BOOL isSuccess) {
+    //        if (isSuccess) {
+    //
+    //            NSLog(@"=======\n====\n===%@",[NSThread currentThread]);
+    //
+    //
+    //            dispatch_group_leave(group);
+    //        }
+    //    }];
+    //    dispatch_group_enter(group);
+    //    [self getAdsWithAid:^(BOOL isSuccess) {
+    //        if (isSuccess) {
+    //            dispatch_group_leave(group);
+    //        }
+    //    }];
+    //    dispatch_group_enter(group);
+    //    [self getNoticeWithBlock:^(BOOL isSuccess) {
+    //        if (isSuccess) {
+    //            dispatch_group_leave(group);
+    //        }
+    //    }];
+    //    dispatch_group_enter(group);
+    //    [self getCateWithBlock:^(BOOL isSuccess) {
+    //        if (isSuccess) {
+    //            dispatch_group_leave(group);
+    //        }
+    //    }];
+    //    dispatch_group_enter(group);
+    //    [self getItemsWithIsrec:^(BOOL isSuccess) {
+    //        if (isSuccess) {
+    //            dispatch_group_leave(group);
+    //        }
+    //    }];
+    //    dispatch_group_enter(group);
+    //    [self getItemsWithIsrect:^(BOOL isSuccess) {
+    //        if (isSuccess) {
+    //            dispatch_group_leave(group);
+    //        }
+    //    }];
+    //    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+    //        [bself.tableView.mj_header endRefreshing];
+    //        [bself.tableView.mj_footer endRefreshing];
+    //        [bself.tableView reloadData];
+    //    });
 }
 
 //查看是否有未读消息
@@ -359,6 +376,7 @@ static NSString *XBJinRRProductCellID = @"XBJinRRProductCellID";
             }else{
                 [self->msgBtn setImage:[UIImage imageNamed:@"personal_newsclick"] forState:UIControlStateNormal];
             }
+            [self.tableView reloadData];
         }
     } fail:^(NSError *errorString) {
         callBack(NO);
@@ -378,6 +396,7 @@ static NSString *XBJinRRProductCellID = @"XBJinRRProductCellID";
         }else{
             callBack(NO);
         }
+        [self.tableView reloadData];
     } fail:^(NSError *errorString) {
         callBack(NO);
         [wSelf.tableView.mj_header endRefreshing];
@@ -397,6 +416,7 @@ static NSString *XBJinRRProductCellID = @"XBJinRRProductCellID";
             callBack(NO);
             
         }
+        [self.tableView reloadData];
     } fail:^(NSError *errorString) {
         callBack(NO);
         [wSelf.tableView.mj_header endRefreshing];
@@ -416,6 +436,7 @@ static NSString *XBJinRRProductCellID = @"XBJinRRProductCellID";
             callBack(NO);
             
         }
+        [self.tableView reloadData];
     } fail:^(NSError *errorString) {
         callBack(NO);
         [wSelf.tableView.mj_header endRefreshing];
@@ -432,6 +453,7 @@ static NSString *XBJinRRProductCellID = @"XBJinRRProductCellID";
         }else{
             callBack(NO);
         }
+        [self.tableView reloadData];
     } fail:^(NSError *errorString) {
         callBack(NO);
         [wSelf.tableView.mj_header endRefreshing];
@@ -448,6 +470,9 @@ static NSString *XBJinRRProductCellID = @"XBJinRRProductCellID";
         }else{
             callBack(NO);
         }
+        [self.tableView reloadData];
+        [wSelf.tableView.mj_header endRefreshing];
+        [wSelf.tableView.mj_footer endRefreshing];
     } fail:^(NSError *errorString) {
         callBack(NO);
         [wSelf.tableView.mj_header endRefreshing];

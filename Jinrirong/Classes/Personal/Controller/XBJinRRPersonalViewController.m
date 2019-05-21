@@ -132,32 +132,43 @@ static NSString *XBJinRRPersonalNormalCellID = @"XBJinRRPersonalNormalCellID";
 
 - (void)requestData
 {
-    WS(bself);
-    dispatch_group_t group = dispatch_group_create();
-    dispatch_group_enter(group);
     [self isnoreadmsg:^(BOOL isSuccess) {
-        if (isSuccess) {
-            dispatch_group_leave(group);
-        }
-    }];
-    dispatch_group_enter(group);
-    [self getpersonalInfoBlock:^(BOOL issuccess) {
-        if (issuccess) {
-            dispatch_group_leave(group);
-        }
-    }];
-    dispatch_group_enter(group);
-    [self getbankuaisBlock:^(BOOL issuccess) {
-        if (issuccess) {
-            dispatch_group_leave(group);
-        }
+        
     }];
     
-    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
-        [bself.tableView.mj_header endRefreshing];
-        //        [bself.tableView.mj_footer endRefreshing];
-        [bself.tableView reloadData];
-    });
+    [self getpersonalInfoBlock:^(BOOL issuccess) {
+        
+    }];
+    [self getbankuaisBlock:^(BOOL issuccess) {
+        
+    }];
+    
+    //    WS(bself);
+    //    dispatch_group_t group = dispatch_group_create();
+    //    dispatch_group_enter(group);
+    //    [self isnoreadmsg:^(BOOL isSuccess) {
+    //        if (isSuccess) {
+    //            dispatch_group_leave(group);
+    //        }
+    //    }];
+    //    dispatch_group_enter(group);
+    //    [self getpersonalInfoBlock:^(BOOL issuccess) {
+    //        if (issuccess) {
+    //            dispatch_group_leave(group);
+    //        }
+    //    }];
+    //    dispatch_group_enter(group);
+    //    [self getbankuaisBlock:^(BOOL issuccess) {
+    //        if (issuccess) {
+    //            dispatch_group_leave(group);
+    //        }
+    //    }];
+    //
+    //    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+    //        [bself.tableView.mj_header endRefreshing];
+    //        //        [bself.tableView.mj_footer endRefreshing];
+    //        [bself.tableView reloadData];
+    //    });
 }
 
 
@@ -175,6 +186,7 @@ static NSString *XBJinRRPersonalNormalCellID = @"XBJinRRPersonalNormalCellID";
                 wSelf.isNoReadMsg = @"1";
                 
             }
+             [self.tableView reloadData];
         }
     } fail:^(NSError *errorString) {
         callBack(NO);
@@ -190,6 +202,7 @@ static NSString *XBJinRRPersonalNormalCellID = @"XBJinRRPersonalNormalCellID";
         callback(YES);
         XBJinRRPersonInfoModel *personInfoModel = [XBJinRRPersonInfoModel mj_objectWithKeyValues:data];
         bself.personInfoModel = personInfoModel;
+         [self.tableView reloadData];
     } fail:^(NSError *errorString) {
         callback(NO);
         [bself.tableView.mj_header endRefreshing];
@@ -203,6 +216,9 @@ static NSString *XBJinRRPersonalNormalCellID = @"XBJinRRPersonalNormalCellID";
         if (rusultIsCorrect) {
             NSArray *arr = [XBJinRRBankuaisModel mj_objectArrayWithKeyValuesArray:data[@"data"]];
             bself.topItemArray = arr.mutableCopy;
+            [bself.tableView.mj_header endRefreshing];
+            [bself.tableView.mj_footer endRefreshing];
+            [bself.tableView reloadData];
         }
     } fail:^(NSError *errorString) {
         callback(NO);

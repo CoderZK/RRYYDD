@@ -81,31 +81,38 @@
 
 - (void)requestData
 {
-    WS(bself);
-    dispatch_group_t group = dispatch_group_create();
-    dispatch_group_enter(group);
-    [self getTopCreditCards:^(BOOL isSuccess) {
-        if (isSuccess) {
-            dispatch_group_leave(group);
-        }
-    }];
-     dispatch_group_enter(group);
-    [self getHotRecomendCreditCards:^(BOOL isSuccess) {
-        if (isSuccess) {
-            dispatch_group_leave(group);
-        }
-    }];
-    dispatch_group_enter(group);
-    [self getbankBlock:^(BOOL isSuccess) {
-        if (isSuccess) {
-            dispatch_group_leave(group);
-        }
-    }];
-    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
-        [bself.tableView.mj_header endRefreshing];
-        [bself.tableView.mj_footer endRefreshing];
-        [bself.tableView reloadData];
-    });
+    [self getTopCreditCards:^(BOOL isSuccess) {}];
+    
+    [self getHotRecomendCreditCards:^(BOOL isSuccess) {}];
+    
+    [self getbankBlock:^(BOOL isSuccess) {}];
+    
+    
+    //    WS(bself);
+    //    dispatch_group_t group = dispatch_group_create();
+    //    dispatch_group_enter(group);
+    //    [self getTopCreditCards:^(BOOL isSuccess) {
+    //        if (isSuccess) {
+    //            dispatch_group_leave(group);
+    //        }
+    //    }];
+    //     dispatch_group_enter(group);
+    //    [self getHotRecomendCreditCards:^(BOOL isSuccess) {
+    //        if (isSuccess) {
+    //            dispatch_group_leave(group);
+    //        }
+    //    }];
+    //    dispatch_group_enter(group);
+    //    [self getbankBlock:^(BOOL isSuccess) {
+    //        if (isSuccess) {
+    //            dispatch_group_leave(group);
+    //        }
+    //    }];
+    //    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+    //        [bself.tableView.mj_header endRefreshing];
+    //        [bself.tableView.mj_footer endRefreshing];
+    //        [bself.tableView reloadData];
+    //    });
 }
 
 //获取顶部三张银行卡数据
@@ -116,6 +123,9 @@
         if (rusultIsCorrect) {
             NSArray *arr = [XBJinRRCreditCardModel mj_objectArrayWithKeyValuesArray:data[@"data"]];
             bself.topCreditCardArray = arr.mutableCopy;
+            [self.tableView reloadData];
+            [bself.tableView.mj_header endRefreshing];
+            [bself.tableView.mj_footer endRefreshing];
         }
     } fail:^(NSError *errorString) {
         callBack(NO);
@@ -131,7 +141,7 @@
         if (rusultIsCorrect) {
             NSArray *arr = [XBJinRRCreditCardModel mj_objectArrayWithKeyValuesArray:data[@"data"]];
             bself.hotRecommendCreditCardArray = arr.mutableCopy;
-            
+            [self.tableView reloadData];
         }
     } fail:^(NSError *errorString) {
         callBack(NO);
@@ -146,6 +156,8 @@
         if (rusultIsCorrect) {
             NSArray *arr = [XBJinRRBankCardModel mj_objectArrayWithKeyValuesArray:data[@"data"]];
             bself.centerBankCardArray = arr.mutableCopy;
+            [self.tableView reloadData];
+    
         }
     } fail:^(NSError *errorString) {
         callBack(NO);

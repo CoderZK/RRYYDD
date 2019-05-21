@@ -67,10 +67,10 @@
     [XBUMManager initIQKeyboardManager];
     
     //真实界面
-//    self.window.rootViewController = [[XBJinRRBaseTabbarViewController alloc]init];
+    self.window.rootViewController = [[XBJinRRBaseTabbarViewController alloc]init];
     
     //假界面
-    self.window.rootViewController = [[kkkkTabBarVC alloc] init];
+//    self.window.rootViewController = [[kkkkTabBarVC alloc] init];
     
     
     [self checkNewVersionWithAppid:@[@"1462607266",@"1462613312",@"1462843477"] atViewController:self.window.rootViewController];

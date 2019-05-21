@@ -67,25 +67,34 @@
 }
 
 - (void )loadMainData{
-    WS(bself);
-    dispatch_group_t group = dispatch_group_create();
-    dispatch_group_enter(group);
     [self loadRecommendsCorrect:^(BOOL isSuccess) {
-        if (isSuccess) {
-            dispatch_group_leave(group);
-        }
-        }];
-    dispatch_group_enter(group);
-    [self loadListCorrect:^(BOOL isSuccess) {
-        if (isSuccess) {
-            dispatch_group_leave(group);
-        }
+        
     }];
-    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
-        [bself.tableView.mj_header endRefreshing];
-        [bself.tableView.mj_footer endRefreshing];
-        [bself.tableView reloadData];
-    });
+    
+    [self loadListCorrect:^(BOOL isSuccess) {
+        
+    }];
+    
+    
+    //    WS(bself);
+    //    dispatch_group_t group = dispatch_group_create();
+    //    dispatch_group_enter(group);
+    //    [self loadRecommendsCorrect:^(BOOL isSuccess) {
+    //        if (isSuccess) {
+    //            dispatch_group_leave(group);
+    //        }
+    //        }];
+    //    dispatch_group_enter(group);
+    //    [self loadListCorrect:^(BOOL isSuccess) {
+    //        if (isSuccess) {
+    //            dispatch_group_leave(group);
+    //        }
+    //    }];
+    //    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+    //        [bself.tableView.mj_header endRefreshing];
+    //        [bself.tableView.mj_footer endRefreshing];
+    //        [bself.tableView reloadData];
+    //    });
     
 }
 
@@ -112,6 +121,7 @@
                     }
                 }
             }
+             [self.tableView reloadData];
         }
     } fail:^(NSError *errorString) {
         callBack(NO);
@@ -139,6 +149,9 @@
                     }
                 }
             }
+            [bself.tableView.mj_header endRefreshing];
+            [bself.tableView.mj_footer endRefreshing];
+            [bself.tableView reloadData];
 //            if (bself.page>0) {
 //                NSMutableArray *mArr = bself.Lists;
 //                [mArr addObjectsFromArray:modelArr];

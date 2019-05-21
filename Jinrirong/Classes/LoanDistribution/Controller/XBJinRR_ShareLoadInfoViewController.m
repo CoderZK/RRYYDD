@@ -85,24 +85,31 @@
 }
 
 - (void )loadMainRequestData{
-    WS(bself);
-    dispatch_group_t group = dispatch_group_create();
-    dispatch_group_enter(group);
     [self getLoadSharePosterSource:^(BOOL isSuccess) {
-        if (isSuccess) {
-            dispatch_group_leave(group);
-        }
+        
     }];
-    dispatch_group_enter(group);
     [self getLoadShareCustomerWithDate:^(BOOL isSuccess) {
-        if (isSuccess) {
-            dispatch_group_leave(group);
-        }
+        
     }];
-    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
-        [bself.tableView.mj_header endRefreshing];
-        [bself.tableView reloadData];
-    });
+    
+    //    WS(bself);
+    //    dispatch_group_t group = dispatch_group_create();
+    //    dispatch_group_enter(group);
+    //    [self getLoadSharePosterSource:^(BOOL isSuccess) {
+    //        if (isSuccess) {
+    //            dispatch_group_leave(group);
+    //        }
+    //    }];
+    //    dispatch_group_enter(group);
+    //    [self getLoadShareCustomerWithDate:^(BOOL isSuccess) {
+    //        if (isSuccess) {
+    //            dispatch_group_leave(group);
+    //        }
+    //    }];
+    //    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+    //        [bself.tableView.mj_header endRefreshing];
+    //        [bself.tableView reloadData];
+    //    });
 }
 
 
@@ -116,6 +123,8 @@
         if (rusultIsCorrect) {
             NSArray *bannerArray = [XBJinRRHomeBannerModel mj_objectArrayWithKeyValuesArray:data[@"data"]];
             wSelf.bannerArray = bannerArray.mutableCopy;
+            [wSelf.tableView.mj_header endRefreshing];
+            [wSelf.tableView reloadData];
         }else{
         }
         

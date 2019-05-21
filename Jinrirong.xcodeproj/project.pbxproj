@@ -3420,7 +3420,7 @@
 					"$(inherited)",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rryydd.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ganzheapp.rongyidai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = rongedai;
@@ -3467,7 +3467,7 @@
 					"$(inherited)",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rryydd.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ganzheapp.rongyidai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = ryddddis;

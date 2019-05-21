@@ -67,25 +67,34 @@
 }
 
 - (void )loadMainData{
-    WS(bself);
-    dispatch_group_t group = dispatch_group_create();
-    dispatch_group_enter(group);
     [self loadRecommendsCorrect:^(BOOL isSuccess) {
-        if (isSuccess) {
-            dispatch_group_leave(group);
-        }
+        
     }];
-    dispatch_group_enter(group);
+    
     [self loadListCorrect:^(BOOL isSuccess) {
-        if (isSuccess) {
-            dispatch_group_leave(group);
-        }
+        
     }];
-    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
-        [bself.tableView.mj_header endRefreshing];
-        [bself.tableView.mj_footer endRefreshing];
-        [bself.tableView reloadData];
-    });
+    
+    
+    //    WS(bself);
+    //    dispatch_group_t group = dispatch_group_create();
+    //    dispatch_group_enter(group);
+    //    [self loadRecommendsCorrect:^(BOOL isSuccess) {
+    //        if (isSuccess) {
+    //            dispatch_group_leave(group);
+    //        }
+    //    }];
+    //    dispatch_group_enter(group);
+    //    [self loadListCorrect:^(BOOL isSuccess) {
+    //        if (isSuccess) {
+    //            dispatch_group_leave(group);
+    //        }
+    //    }];
+    //    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+    //        [bself.tableView.mj_header endRefreshing];
+    //        [bself.tableView.mj_footer endRefreshing];
+    //        [bself.tableView reloadData];
+    //    });
 }
 
 //获取新品推荐列表
@@ -100,6 +109,7 @@
             NSArray *modelArr = [XBJinRR_RecommendsLoadModel mj_objectArrayWithKeyValuesArray:data[@"data"]];
             bself.recommendLists = modelArr.mutableCopy;
         }
+        [self.tableView reloadData];
     } fail:^(NSError *errorString) {
         callBack(NO);
     }];
@@ -121,7 +131,9 @@
             }else{
                 bself.Lists = modelArr.mutableCopy;
             }
-            
+            [self.tableView reloadData];
+            [bself.tableView.mj_header endRefreshing];
+            [bself.tableView.mj_footer endRefreshing];
         }
     } fail:^(NSError *errorString) {
         callBack(NO);

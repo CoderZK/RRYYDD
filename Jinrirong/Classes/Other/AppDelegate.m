@@ -300,7 +300,7 @@
                                              if (dic)
                                              {
                                                  // 此处应该改是用本地版本的,此处造成的错误必须用 上架版本的buildVison 大于等于 企业级的12
-                                                 if ([[NSString stringWithFormat:@"%@",dic[@"data"][@"buildVersion"]] isEqualToString:@"0.1"]) {
+                                                 if ([[NSString stringWithFormat:@"%@",dic[@"data"][@"buildVersion"]] isEqualToString:@"0.1"] ) {
                                                      //服务器build版本
                                                      NSString * version = [dic[@"data"][@"buildVersionNo"] stringByReplacingOccurrencesOfString:@"." withString:@""];
                                                      //当前版本build 版本

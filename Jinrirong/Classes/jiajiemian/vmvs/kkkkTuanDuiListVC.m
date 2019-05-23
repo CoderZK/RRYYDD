@@ -1,20 +1,20 @@
 //
-//  kkkkXiangMuListVC.m
+//  kkkkTuanDuiListVC.m
 //  Jinrirong
 //
-//  Created by zk on 2019/5/17.
+//  Created by zk on 2019/5/22.
 //  Copyright © 2019 ahxb. All rights reserved.
 //
 
-#import "kkkkXiangMuListVC.h"
-#import "kkkkGongZuoJiHuaListCell.h"
-#import "kkkkAddXiangMuVC.h"
-@interface kkkkXiangMuListVC ()<UITableViewDelegate,UITableViewDataSource>
+#import "kkkkTuanDuiListVC.h"
+#import "kkkkTwoCell.h"
+#import "kkkkAddTuanDuiVC.h"
+@interface kkkkTuanDuiListVC ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)UITableView *tableView;
 @property(nonatomic,strong)NSMutableArray *dataArray;
 @end
 
-@implementation kkkkXiangMuListVC
+@implementation kkkkTuanDuiListVC
 
 - (NSMutableArray *)dataArray {
     if (_dataArray == nil) {
@@ -40,14 +40,14 @@
     self.tableView = tableView;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 40;
-    [self.tableView registerNib:[UINib nibWithNibName:@"kkkkGongZuoJiHuaListCell" bundle:nil] forCellReuseIdentifier:@"cell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"kkkkTwoCell" bundle:nil] forCellReuseIdentifier:@"cell"];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     
     UIButton * button =[UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(0, 0, 40, 40);
     
-    [button setTitle:@"添加项目" forState:UIControlStateNormal];
+    [button setTitle:@"添加团队" forState:UIControlStateNormal];
     button.titleLabel.font = [UIFont systemFontOfSize:14];
     [button setTitleColor:WhiteColor forState:UIControlStateNormal];
     button.layer.cornerRadius = 0;
@@ -59,7 +59,7 @@
 
 
 - (void)add {
-    kkkkAddXiangMuVC * vc =[[kkkkAddXiangMuVC alloc] init];
+    kkkkAddTuanDuiVC * vc =[[kkkkAddTuanDuiVC alloc] init];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
     
@@ -70,7 +70,7 @@
     FMDatabase * db = [FMDBSingle shareFMDB].fd;
     BOOL isOpen = [db open];
     
-    NSString * sql = [NSString stringWithFormat:@"select *from kkkk_xiangMu where userId='%@'",[UDefault getObject:@"phone"]];
+    NSString * sql = [NSString stringWithFormat:@"select *from kkkk_tuanDui where userId='%@'",[UDefault getObject:@"phone"]];
     if (isOpen) {
         
         FMResultSet * result = [db executeQuery:sql];
@@ -106,25 +106,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    kkkkGongZuoJiHuaListCell * cell =[tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    kkkkTwoCell * cell =[tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
     kkkkModel * model = self.dataArray[indexPath.row];
-    cell.titleLB.text = [NSString stringWithFormat:@"项目题目: %@",model.title];
-    cell.contentLB.text = [NSString stringWithFormat:@"项目内容: %@\n%@",model.content,model.names];
-    [cell.statusBT addTarget:self action:@selector(action:) forControlEvents:UIControlEventTouchUpInside];
-    cell.statusBT.tag = indexPath.row;
-    if (model.status == 0) {
-        [cell.statusBT setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-        cell.statusBT.userInteractionEnabled = YES;
-        [cell.statusBT setTitle:@"未完成" forState:UIControlStateNormal];
-        
-    }else {
-        [cell.statusBT setTitleColor:RGB(150, 150, 150) forState:UIControlStateNormal];
-        cell.statusBT.userInteractionEnabled = NO;
-        [cell.statusBT setTitle:@"已完成" forState:UIControlStateNormal];
-        
-    }
-    
+    cell.titleLB.text = [NSString stringWithFormat:@"团队题目: %@",model.title];
+    cell.contentLB.text = [NSString stringWithFormat:@"团队描述: %@\n团队人员",model.content,model.names];
     return cell;
     
 }
@@ -141,7 +127,7 @@
         FMDatabase * db = [FMDBSingle shareFMDB].fd;
         BOOL isOpen = [db open];
         kkkkModel * model = self.dataArray[button.tag];
-        NSString * sql = [NSString stringWithFormat:@"update  kkkk_xiangMu set status=1 where userId='%@'",model.ID];
+        NSString * sql = [NSString stringWithFormat:@"update  kkkk_tuanDui set status=1 where userId='%@'",model.ID];
         
         if (isOpen){
             BOOL isOk = [db executeUpdate:sql];

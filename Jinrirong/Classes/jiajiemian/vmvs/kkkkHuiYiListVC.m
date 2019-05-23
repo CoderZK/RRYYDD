@@ -1,20 +1,20 @@
 //
-//  kkkkXiangMuListVC.m
+//  kkkkHuiYiListVC.m
 //  Jinrirong
 //
-//  Created by zk on 2019/5/17.
+//  Created by zk on 2019/5/22.
 //  Copyright © 2019 ahxb. All rights reserved.
 //
 
-#import "kkkkXiangMuListVC.h"
+#import "kkkkHuiYiListVC.h"
 #import "kkkkGongZuoJiHuaListCell.h"
-#import "kkkkAddXiangMuVC.h"
-@interface kkkkXiangMuListVC ()<UITableViewDelegate,UITableViewDataSource>
+#import "kkkkAddHuiYiVC.h"
+@interface kkkkHuiYiListVC ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)UITableView *tableView;
 @property(nonatomic,strong)NSMutableArray *dataArray;
 @end
 
-@implementation kkkkXiangMuListVC
+@implementation kkkkHuiYiListVC
 
 - (NSMutableArray *)dataArray {
     if (_dataArray == nil) {
@@ -30,7 +30,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"项目列表列表";
+    self.navigationItem.title = @"会议列表";
     
     
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
@@ -47,7 +47,7 @@
     UIButton * button =[UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(0, 0, 40, 40);
     
-    [button setTitle:@"添加项目" forState:UIControlStateNormal];
+    [button setTitle:@"添加会议" forState:UIControlStateNormal];
     button.titleLabel.font = [UIFont systemFontOfSize:14];
     [button setTitleColor:WhiteColor forState:UIControlStateNormal];
     button.layer.cornerRadius = 0;
@@ -59,7 +59,7 @@
 
 
 - (void)add {
-    kkkkAddXiangMuVC * vc =[[kkkkAddXiangMuVC alloc] init];
+    kkkkAddHuiYiVC * vc =[[kkkkAddHuiYiVC alloc] init];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
     
@@ -70,7 +70,7 @@
     FMDatabase * db = [FMDBSingle shareFMDB].fd;
     BOOL isOpen = [db open];
     
-    NSString * sql = [NSString stringWithFormat:@"select *from kkkk_xiangMu where userId='%@'",[UDefault getObject:@"phone"]];
+    NSString * sql = [NSString stringWithFormat:@"select *from kkkk_huiYi where userId='%@'",[UDefault getObject:@"phone"]];
     if (isOpen) {
         
         FMResultSet * result = [db executeQuery:sql];
@@ -82,7 +82,6 @@
             model.userId = [result stringForColumn:@"userId"];
             model.title = [result stringForColumn:@"title"];
             model.content = [result stringForColumn:@"content"];
-            model.names = [result stringForColumn:@"names"];
             model.status = [result intForColumn:@"status"];
             
             [self.dataArray insertObject:model atIndex:0];
@@ -109,8 +108,9 @@
     kkkkGongZuoJiHuaListCell * cell =[tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
     kkkkModel * model = self.dataArray[indexPath.row];
-    cell.titleLB.text = [NSString stringWithFormat:@"项目题目: %@",model.title];
-    cell.contentLB.text = [NSString stringWithFormat:@"项目内容: %@\n%@",model.content,model.names];
+    cell.titleLB.text = [NSString stringWithFormat:@"会议题目: %@",model.title];
+    cell.contentLB.text = [NSString stringWithFormat:@"会议内容: %@",model.content];
+    
     [cell.statusBT addTarget:self action:@selector(action:) forControlEvents:UIControlEventTouchUpInside];
     cell.statusBT.tag = indexPath.row;
     if (model.status == 0) {
@@ -124,6 +124,7 @@
         [cell.statusBT setTitle:@"已完成" forState:UIControlStateNormal];
         
     }
+    
     
     return cell;
     
@@ -141,7 +142,7 @@
         FMDatabase * db = [FMDBSingle shareFMDB].fd;
         BOOL isOpen = [db open];
         kkkkModel * model = self.dataArray[button.tag];
-        NSString * sql = [NSString stringWithFormat:@"update  kkkk_xiangMu set status=1 where userId='%@'",model.ID];
+        NSString * sql = [NSString stringWithFormat:@"update  kkkk_renWu set status=1 where userId='%@'",model.ID];
         
         if (isOpen){
             BOOL isOk = [db executeUpdate:sql];
@@ -170,5 +171,14 @@
     
 }
 
+/*
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

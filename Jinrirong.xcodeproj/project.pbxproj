@@ -416,6 +416,8 @@
 		58C2FA06228E8EB9003070AE /* kkkkAddXiangMuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58C2FA04228E8EB9003070AE /* kkkkAddXiangMuVC.xib */; };
 		58D4F93F227FE21200C7653A /* UMMobClick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D4F93D227FDC4900C7653A /* UMMobClick.framework */; };
 		58D4F940227FE4E400C7653A /* JhtMarquee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0457347020C8B6A800919F64 /* JhtMarquee.framework */; };
+		668A4F812298DF2100D8495A /* kkkkHomeThreeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 668A4F7F2298DF2100D8495A /* kkkkHomeThreeCell.m */; };
+		668A4F822298DF2100D8495A /* kkkkHomeThreeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 668A4F802298DF2100D8495A /* kkkkHomeThreeCell.xib */; };
 		A95B01C02260314600147DE7 /* XBJinRR_NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A95B01BE2260314600147DE7 /* XBJinRR_NewsViewController.m */; };
 		A95B01C12260314600147DE7 /* XBJinRR_NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A95B01BF2260314600147DE7 /* XBJinRR_NewsViewController.xib */; };
 		A95B01CA226038D300147DE7 /* XBJinRR_NewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A95B01C8226038D300147DE7 /* XBJinRR_NewsCell.m */; };
@@ -1210,6 +1212,9 @@
 		58C2FA04228E8EB9003070AE /* kkkkAddXiangMuVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = kkkkAddXiangMuVC.xib; sourceTree = "<group>"; };
 		58D4F93D227FDC4900C7653A /* UMMobClick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UMMobClick.framework; path = Pods/UMengAnalytics/umsdk_IOS_analyics_idfa_v4.2.4/UMMobClick.framework; sourceTree = "<group>"; };
 		58D4F941227FFC8600C7653A /* Jinrirong.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Jinrirong.entitlements; sourceTree = "<group>"; };
+		668A4F7E2298DF2100D8495A /* kkkkHomeThreeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kkkkHomeThreeCell.h; sourceTree = "<group>"; };
+		668A4F7F2298DF2100D8495A /* kkkkHomeThreeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = kkkkHomeThreeCell.m; sourceTree = "<group>"; };
+		668A4F802298DF2100D8495A /* kkkkHomeThreeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = kkkkHomeThreeCell.xib; sourceTree = "<group>"; };
 		A95B01BD2260314600147DE7 /* XBJinRR_NewsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XBJinRR_NewsViewController.h; sourceTree = "<group>"; };
 		A95B01BE2260314600147DE7 /* XBJinRR_NewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XBJinRR_NewsViewController.m; sourceTree = "<group>"; };
 		A95B01BF2260314600147DE7 /* XBJinRR_NewsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XBJinRR_NewsViewController.xib; sourceTree = "<group>"; };
@@ -2712,6 +2717,9 @@
 				587296302282A67A00BC1EF5 /* kkkkHomeOneCell.h */,
 				587296312282A67A00BC1EF5 /* kkkkHomeOneCell.m */,
 				587296322282A67A00BC1EF5 /* kkkkHomeOneCell.xib */,
+				668A4F7E2298DF2100D8495A /* kkkkHomeThreeCell.h */,
+				668A4F7F2298DF2100D8495A /* kkkkHomeThreeCell.m */,
+				668A4F802298DF2100D8495A /* kkkkHomeThreeCell.xib */,
 				587296382282BC9900BC1EF5 /* kkkkCell.h */,
 				587296392282BC9900BC1EF5 /* kkkkCell.m */,
 				5872963A2282BC9900BC1EF5 /* kkkkCell.xib */,
@@ -2879,6 +2887,7 @@
 				044800CD20EF5B8F008D5EBA /* README.txt in Resources */,
 				58552F2E228270850084041A /* noneDataBg.png in Resources */,
 				A9C5CF98226042810000DFF6 /* XBJinRRNewsSectionView.xib in Resources */,
+				668A4F822298DF2100D8495A /* kkkkHomeThreeCell.xib in Resources */,
 				043C7F7020C4C71E00AA226B /* XBJinRRCreditCardDetailFkzzCell.xib in Resources */,
 				045EB4A020C61B6F002CBB2D /* XBJinRRChoosePaymodeCell.xib in Resources */,
 				040AA23420C776A500151650 /* XBJinRRCredibilityCell.xib in Resources */,
@@ -3107,6 +3116,7 @@
 				0457347D20C8DBFC00919F64 /* XBJinRRBasePaymentViewController.m in Sources */,
 				AAF8285A21F99B8F00EE9464 /* HMPopMenu.m in Sources */,
 				3C3B5A60209AA183005DDE98 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				668A4F812298DF2100D8495A /* kkkkHomeThreeCell.m in Sources */,
 				3C78038420A27E9500F91B98 /* MJRefreshBackNormalFooter.m in Sources */,
 				3C40305020A5915C0048860D /* XBJinRRCheckCodeView.m in Sources */,
 				04BBAD1C20C12C0500A135FB /* XBJinRRCreditCardCenterTopCell.m in Sources */,

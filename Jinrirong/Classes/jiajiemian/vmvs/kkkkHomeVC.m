@@ -18,12 +18,20 @@
 #import "kkkkRiBaoListVC.h"
 #import "kkkkHuiYiListVC.h"
 #import "kkkkTuanDuiListVC.h"
+#import "kkkkHomeThreeCell.h"
 @interface kkkkHomeVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *tableView;
+@property(nonatomic,strong)NSMutableArray *dataArray;
+
 @end
 
 @implementation kkkkHomeVC
-
+- (NSMutableArray *)dataArray {
+    if (_dataArray == nil) {
+        _dataArray = [NSMutableArray array];
+    }
+    return _dataArray;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
@@ -36,15 +44,53 @@
     
     [self.tableView registerNib:[UINib nibWithNibName:@"kkkkHomeOneCell" bundle:nil] forCellReuseIdentifier:@"cellone"];
     [self.tableView registerClass:[kkkkHomeTwoCell class] forCellReuseIdentifier:@"twoCell"];
+     [self.tableView registerNib:[UINib nibWithNibName:@"kkkkHomeThreeCell" bundle:nil] forCellReuseIdentifier:@"cellThree"];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    [self getData];
+    
+    
+    
 }
+
+- (void)getData {
+    NSArray * arr  = @[@"kkkk_mineDongTai",@"kkkk_gongZuoJiHua",@"kkkk_renWu",@"kkkk_tuanDui"];
+    FMDatabase * db = [FMDBSingle shareFMDB].fd;
+    [self.dataArray removeAllObjects];
+    BOOL isOpen = [db open];
+    for (int i = 0 ; i<arr.count; i++) {
+        NSString * sql = [NSString stringWithFormat:@"select *from %@ where userId='%@'",arr[i],[UDefault getObject:@"phone"]];
+        if (isOpen) {
+            
+            FMResultSet * result = [db executeQuery:sql];
+           
+            if ([result next]) {
+                
+                kkkkModel * model = [[kkkkModel alloc] init];
+                model.ID = [result stringForColumn:@"ID"];
+                model.userId = [result stringForColumn:@"userId"];
+                model.title = [result stringForColumn:@"title"];
+                model.content = [result stringForColumn:@"content"];
+                [self.dataArray insertObject:model atIndex:0];
+                
+            }
+            [self.tableView reloadData];
+        }
+    }
+    [self.tableView reloadData];
+    [db close];
+}
+
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if(section == 2){
+        return 4;
+    }
     return 1;
 }
 
@@ -54,7 +100,7 @@
     }else if (indexPath.section == 1) {
         return 185;
     }else if (indexPath.section == 2) {
-        return 60;
+        return 113;
     }
     return 80;
 }
@@ -127,7 +173,8 @@
         return cell;
     }else if (indexPath.section == 2) {
         
-     
+        kkkkHomeThreeCell * cell =[tableView dequeueReusableCellWithIdentifier:@"cellThree" forIndexPath:indexPath];
+        return cell;
         
     }
     kkkkHomeOneCell * cell =[tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];

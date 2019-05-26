@@ -40,6 +40,7 @@
     }
     
     
+    
     FMDatabase * db = [FMDBSingle shareFMDB].fd;
     BOOL isOpen = [db open];
     //    NSString * sql = [[NSString stringWithFormat:@"insert into kkkk_mineDongTai (title,content,scan,like,userId) values ('%@','%@','%d','%d','%@')",self.TF.text,self.TV.text,0,0,@"1111"]];

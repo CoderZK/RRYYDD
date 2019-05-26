@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="419" height="162.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="duj-Iq-G6I">
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="duj-Iq-G6I">
                         <rect key="frame" x="374" y="15" width="30" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="OZ3-ek-0iH"/>
@@ -28,8 +28,8 @@
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <state key="normal" title="更多"/>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ox7-Eb-vpl">
-                        <rect key="frame" x="15" y="15" width="150" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ox7-Eb-vpl">
+                        <rect key="frame" x="10" y="15" width="150" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="2Vr-eu-acQ"/>
                             <constraint firstAttribute="width" constant="150" id="VEN-GH-Sfp"/>
@@ -38,8 +38,8 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GqF-nY-eTZ">
-                        <rect key="frame" x="15" y="77" width="389" height="74.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GqF-nY-eTZ">
+                        <rect key="frame" x="0.0" y="79" width="389" height="74.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -79,7 +79,12 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
-            <point key="canvasLocation" x="132" y="102.09895052473765"/>
+            <connections>
+                <outlet property="contentLB" destination="GqF-nY-eTZ" id="CQJ-od-3os"/>
+                <outlet property="titleLB" destination="Dhk-qL-WQ6" id="eeS-LT-P6j"/>
+                <outlet property="typeLB" destination="Ox7-Eb-vpl" id="g3h-7g-QeU"/>
+            </connections>
+            <point key="canvasLocation" x="-546" y="66"/>
         </tableViewCell>
     </objects>
 </document>

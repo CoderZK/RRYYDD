@@ -11,6 +11,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface kkkkHomeThreeCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *typeLB;
+@property (weak, nonatomic) IBOutlet UILabel *titleLB;
+@property (weak, nonatomic) IBOutlet UILabel *contentLB;
 
 @end
 

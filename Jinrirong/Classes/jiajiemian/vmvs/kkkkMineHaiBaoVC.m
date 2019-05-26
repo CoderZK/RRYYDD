@@ -40,7 +40,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.ID = @"6";
+    self.ID = @"18";
     
     self.view.backgroundColor = [UIColor whiteColor];
     [self setNavWithTitle:@"我的专属海报" isShowBack:YES];

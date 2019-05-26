@@ -19,6 +19,8 @@
 #import "kkkkHuiYiListVC.h"
 #import "kkkkTuanDuiListVC.h"
 #import "kkkkHomeThreeCell.h"
+#import "XBJinRRLoginViewController.h"
+#import "XBJinRRBaseNavigationViewController.h"
 @interface kkkkHomeVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *tableView;
 @property(nonatomic,strong)NSMutableArray *dataArray;
@@ -32,6 +34,18 @@
     }
     return _dataArray;
 }
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    NSString *token = [UDefault getObject:TOKEN];
+    if (token == nil || [token isEqualToString:@""]) {
+        XBJinRRLoginViewController *vc = [[XBJinRRLoginViewController alloc] init];
+        XBJinRRBaseNavigationViewController *nav = [[XBJinRRBaseNavigationViewController alloc] initWithRootViewController:vc];
+        [self presentViewController:nav animated:YES completion:nil];
+        return;
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
@@ -89,7 +103,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if(section == 2){
-        return 4;
+        return self.dataArray.count;
     }
     return 1;
 }
@@ -174,6 +188,11 @@
     }else if (indexPath.section == 2) {
         
         kkkkHomeThreeCell * cell =[tableView dequeueReusableCellWithIdentifier:@"cellThree" forIndexPath:indexPath];
+        NSArray * arr = @[@"动态",@"工作计划",@"任务",@"团队"];
+        cell.typeLB.text =  [NSString stringWithFormat:@"类型: %@",arr[indexPath.row]];;
+        kkkkModel * model = self.dataArray[indexPath.row];
+        cell.titleLB.text =  [NSString stringWithFormat:@"%@标题: %@",arr[indexPath.row],model.title];;
+        cell.contentLB.text =  [NSString stringWithFormat:@"详细信息: %@",model.content];
         return cell;
         
     }
@@ -183,6 +202,28 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.section == 2) {
+        
+        if (indexPath.row == 0) {
+            kkkkDongTaiVC * vc =[[kkkkDongTaiVC alloc] init];
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:YES];
+        }else if (indexPath.row == 1) {
+            kkkkGongZuoJiHuaListVC * vc =[[kkkkGongZuoJiHuaListVC alloc] init];
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:YES];
+        }else if (indexPath.row == 2) {
+            kkkkRenWuVC * vc =[[kkkkRenWuVC alloc] init];
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:YES];
+        }else if (indexPath.row == 3) {
+            kkkkTuanDuiListVC * vc =[[kkkkTuanDuiListVC alloc] init];
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+    }
+    
+    
     
 }
 

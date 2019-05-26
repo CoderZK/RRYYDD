@@ -10,6 +10,8 @@
 #import "XBJinRRPersonalCustomerListViewController.h"
 #import "XBJinRRMyPurseViewController.h"
 #import "kkkkMoneyTwoVC.h"
+#import "XBJinRRLoginViewController.h"
+#import "XBJinRRBaseNavigationViewController.h"
 @interface kkkkMoneyVC ()
 {
     NSInteger nowIndex;
@@ -19,7 +21,16 @@
 
 @implementation kkkkMoneyVC
 
-
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    NSString *token = [UDefault getObject:TOKEN];
+    if (token == nil || [token isEqualToString:@""]) {
+        XBJinRRLoginViewController *vc = [[XBJinRRLoginViewController alloc] init];
+        XBJinRRBaseNavigationViewController *nav = [[XBJinRRBaseNavigationViewController alloc] initWithRootViewController:vc];
+        [self presentViewController:nav animated:YES completion:nil];
+        return;
+    }
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     nowIndex = 0;

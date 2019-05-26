@@ -70,7 +70,7 @@
     FMDatabase * db = [FMDBSingle shareFMDB].fd;
     BOOL isOpen = [db open];
     
-    NSString * sql = [NSString stringWithFormat:@"select *from kkkk_xiangMu where userId='%@'",[UDefault getObject:@"phone"]];
+    NSString * sql = [NSString stringWithFormat:@"select *from kkkk_mineProject where userId='%@'",[UDefault getObject:@"phone"]];
     if (isOpen) {
         
         FMResultSet * result = [db executeQuery:sql];

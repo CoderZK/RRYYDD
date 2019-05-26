@@ -18,7 +18,7 @@
     [super viewDidLoad];
     self.TV.layer.borderColor = RGB(200, 200, 200).CGColor;
     self.TV.layer.borderWidth = 1;
-    self.navigationItem.title = @"添加任务";
+    self.navigationItem.title = @"添加会议";
     
     
     

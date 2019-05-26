@@ -44,7 +44,7 @@
     BOOL isOpen = [db open];
     //    NSString * sql = [[NSString stringWithFormat:@"insert into kkkk_mineDongTai (title,content,scan,like,userId) values ('%@','%@','%d','%d','%@')",self.TF.text,self.TV.text,0,0,@"1111"]];
     
-    NSString * sql = [NSString stringWithFormat:@"insert into kkkk_xiangMu (title,content,status,userId,names) values ('%@','%@','%d','%@','%@')",self.TF.text,self.TV.text,0,[UDefault getObject:@"phone"],self.namesTV.text];
+    NSString * sql = [NSString stringWithFormat:@"insert into kkkk_mineProject (title,content,status,userId,names) values ('%@','%@','%d','%@','%@')",self.TF.text,self.TV.text,0,[UDefault getObject:@"phone"],self.namesTV.text];
     
     if (isOpen) {
         BOOL insert = [db executeUpdate:sql];

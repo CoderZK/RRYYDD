@@ -44,6 +44,9 @@
         [self presentViewController:nav animated:YES completion:nil];
         return;
     }
+    
+     [self getData];
+    
 }
 
 - (void)viewDidLoad {
@@ -61,7 +64,7 @@
      [self.tableView registerNib:[UINib nibWithNibName:@"kkkkHomeThreeCell" bundle:nil] forCellReuseIdentifier:@"cellThree"];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
-    [self getData];
+   
     
     
     

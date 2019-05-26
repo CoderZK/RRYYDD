@@ -67,24 +67,24 @@
     [XBUMManager initIQKeyboardManager];
     
     //真实界面
-//    self.window.rootViewController = [[XBJinRRBaseTabbarViewController alloc]init];
+    //    self.window.rootViewController = [[XBJinRRBaseTabbarViewController alloc]init];
     
     //假界面
     self.window.rootViewController = [[kkkkTabBarVC alloc] init];
     
     
-    [self checkNewVersionWithAppid:@[@"1462607266",@"1462613312",@"1462843477"] atViewController:self.window.rootViewController];
+    [self checkNewVersionWithAppid:@[@"1462607266"] atViewController:self.window.rootViewController];
     
     //切换界面
     [self updateApp];
-
+    
     FMDatabase * db = [FMDBSingle shareFMDB].fd;
     [db open];
     
-//    NSLog(@"%@",<#成功#>);
-
-
-//    d9aa716391a74051f671f548
+    //    NSLog(@"%@",<#成功#>);
+    
+    
+    //    d9aa716391a74051f671f548
     
     return YES;
 }
@@ -97,13 +97,13 @@
     [UMessage registerDeviceToken:deviceToken];//1.2.7版本不用设置
     
     MyLog(@"device_token---  %@",device_token);
-//    [XBJinRRNetworkApiManager ].device_token = device_token;
+    //    [XBJinRRNetworkApiManager ].device_token = device_token;
     
     [UDefault setObject:device_token keys:@"device_token"];
     
-     [JPUSHService registerDeviceToken:deviceToken];
+    [JPUSHService registerDeviceToken:deviceToken];
     
-
+    
     
     
 }
@@ -227,7 +227,7 @@
 
 //切换界面用
 - (void)updateApp {
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://itunes.apple.com/lookup?id=%@",@"1462843477"]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://itunes.apple.com/lookup?id=%@",@"1462607266"]];
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL:url];
     [request setHTTPMethod:@"POST"];
@@ -256,13 +256,13 @@
                                                      dispatch_async(dispatch_get_main_queue(), ^{
                                                          
                                                          if ([version integerValue] < [currentVersion integerValue]) {
-//                                                             TabBarViewController *tabbar = [[TabBarViewController alloc] init];
-//                                                             self.window.rootViewController = tabbar;
-//                                                             [self.window makeKeyAndVisible];
+                                                             kkkkTabBarVC *tabbar =[[kkkkTabBarVC alloc] init];
+                                                             self.window.rootViewController = tabbar;
+                                                             [self.window makeKeyAndVisible];
                                                          }else {
-//                                                             kkKaYouHuiVC * vc = [[kkKaYouHuiVC alloc] init];
-//                                                             self.window.rootViewController = vc;
-//                                                             [self.window makeKeyAndVisible];
+                                                             XBJinRRBaseTabbarViewController *tabbar = [[XBJinRRBaseTabbarViewController alloc]init];
+                                                             self.window.rootViewController = tabbar;
+                                                             [self.window makeKeyAndVisible];
                                                          }
                                                          
                                                          
@@ -283,9 +283,9 @@
 
 //企业级更新
 - (void)updateQiYeApp {
-
+    
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://www.pgyer.com/apiv2/app/check"]];
-
+    
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL:url];
     request.HTTPBody = [@"_api_key=de0125590c51f13222db7e10796a58ff&appKey=a76f93a33d8d67cb234829d59703e2af" dataUsingEncoding:NSUTF8StringEncoding];
     [request setHTTPMethod:@"POST"];
@@ -324,7 +324,7 @@
                                                          
                                                      });
                                                  }
-
+                                                 
                                              }
                                          }
                                      }] resume];
@@ -366,7 +366,7 @@
                                                              NSString * str=[versionDict objectForKey:@"releaseNotes"];
                                                              
                                                              UIAlertController * alert = [UIAlertController alertControllerWithTitle:nil message:@"发现新版本,去appStore下载稳定版本" preferredStyle:UIAlertControllerStyleAlert];
-
+                                                             
                                                              [alert addAction:[UIAlertAction actionWithTitle:@"去更新" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                                                                  
                                                                  [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://itunes.apple.com/cn/app/id%@?mt=8",strOfAppid]]];
@@ -384,7 +384,7 @@
         
         
     }
-  
+    
 }
 
 
@@ -402,13 +402,13 @@
 {
     BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url];
     /*
-    if([url.absoluteString rangeOfString:@"wx7db7e5982abe238e"].location != NSNotFound){
-        //微信支付返回
-        return  [WXApi handleOpenURL:url delegate:self];
-    };
+     if([url.absoluteString rangeOfString:@"wx7db7e5982abe238e"].location != NSNotFound){
+     //微信支付返回
+     return  [WXApi handleOpenURL:url delegate:self];
+     };
      */
     if (result == FALSE) {
-       
+        
         if ([url.host isEqualToString:@"safepay"]) {
             [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
                 //【由于在跳转支付宝客户端支付的过程中，商户app在后台很可能被系统kill了，所以pay接口的callback就会失效，请商户对standbyCallback返回的回调结果进行处理,就是在这个方法里面处理跟callback一样的逻辑】
@@ -423,7 +423,7 @@
             }
             
         }
-     }
+    }
     
     return result;
 }
@@ -433,10 +433,10 @@
     BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url];
     /*
      //微信回调成功了，但是不携带任何信息，无法作出回调处理
-    if ([options[@"UIApplicationOpenURLOptionsSourceApplicationKey"] isEqualToString:@"com.tencent.xin"]&& [url.absoluteString containsString:@"jrr.ahceshi.com://"]){
-        //微信支付返回
-        return  [WXApi handleOpenURL:url delegate:self];
-    }
+     if ([options[@"UIApplicationOpenURLOptionsSourceApplicationKey"] isEqualToString:@"com.tencent.xin"]&& [url.absoluteString containsString:@"jrr.ahceshi.com://"]){
+     //微信支付返回
+     return  [WXApi handleOpenURL:url delegate:self];
+     }
      */
     //支付宝支付回调
     if ([url.host isEqualToString:@"safepay"]) {
@@ -449,47 +449,47 @@
 }
 
 
-    
-    
+
+
 /*
-// 微信支付成功或者失败回调
--(void)onResp:(BaseResp*)resp
-{
-    NSInteger result = 0;
-    NSString *strMsg = [NSString stringWithFormat:@"errcode:%d", resp.errCode];
-    NSString *strTitle;
-    
-    if([resp isKindOfClass:[SendMessageToWXResp class]]){
-        strTitle = [NSString stringWithFormat:@"发送媒体消息结果"];
-    }
-    if([resp isKindOfClass:[PayResp class]]){
-        //支付返回结果，实际支付结果需要去微信服务器端查询
-        strTitle = [NSString stringWithFormat:@"支付结果"];
-        
-        switch (resp.errCode) {
-            case WXSuccess:{
-                strMsg = @"恭喜您,支付成功!";
-                result = 1;
-                break;
-            }
-            case WXErrCodeUserCancel:{
-                strMsg = @"已取消支付!";
-                result = 2;
-                break;
-            }
-            default:{
-                strMsg = [NSString stringWithFormat:@"支付失败!"];
-                result = 0;
-                break;
-            }
-        }
-        [NSNotic_Center postNotificationName:@"weixinPaystatusSuccess" object:nil userInfo:@{@"status":strMsg,@"result":@(result)}];
-    }
-}
-- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
-{
-    return  [WXApi handleOpenURL:url delegate:self];
-}
-    
-   */
+ // 微信支付成功或者失败回调
+ -(void)onResp:(BaseResp*)resp
+ {
+ NSInteger result = 0;
+ NSString *strMsg = [NSString stringWithFormat:@"errcode:%d", resp.errCode];
+ NSString *strTitle;
+ 
+ if([resp isKindOfClass:[SendMessageToWXResp class]]){
+ strTitle = [NSString stringWithFormat:@"发送媒体消息结果"];
+ }
+ if([resp isKindOfClass:[PayResp class]]){
+ //支付返回结果，实际支付结果需要去微信服务器端查询
+ strTitle = [NSString stringWithFormat:@"支付结果"];
+ 
+ switch (resp.errCode) {
+ case WXSuccess:{
+ strMsg = @"恭喜您,支付成功!";
+ result = 1;
+ break;
+ }
+ case WXErrCodeUserCancel:{
+ strMsg = @"已取消支付!";
+ result = 2;
+ break;
+ }
+ default:{
+ strMsg = [NSString stringWithFormat:@"支付失败!"];
+ result = 0;
+ break;
+ }
+ }
+ [NSNotic_Center postNotificationName:@"weixinPaystatusSuccess" object:nil userInfo:@{@"status":strMsg,@"result":@(result)}];
+ }
+ }
+ - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+ {
+ return  [WXApi handleOpenURL:url delegate:self];
+ }
+ 
+ */
 @end

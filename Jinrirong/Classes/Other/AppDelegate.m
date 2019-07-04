@@ -67,13 +67,14 @@
     [XBUMManager initIQKeyboardManager];
     
     //真实界面
-    //    self.window.rootViewController = [[XBJinRRBaseTabbarViewController alloc]init];
+        self.window.rootViewController = [[XBJinRRBaseTabbarViewController alloc]init];
     
     //假界面
-    self.window.rootViewController = [[kkkkTabBarVC alloc] init];
+//    self.window.rootViewController = [[kkkkTabBarVC alloc] init];
     
     
-    [self checkNewVersionWithAppid:@[@"1462607266"] atViewController:self.window.rootViewController];
+//    [self checkNewVersionWithAppid:@[@"1462607266"] atViewController:self.window.rootViewController];
+    [self updateQiYeApp];
     
     //切换界面
     [self updateApp];
@@ -271,7 +272,7 @@
                                                      
                                                  }else {
                                                      //未上架
-                                                     [self updateQiYeApp];
+//                                                     [self updateQiYeApp];
                                                      
                                                  }
                                              }

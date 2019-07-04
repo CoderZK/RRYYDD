@@ -14,9 +14,9 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "78F49ADA9F7F675D87D8ADCCA6588BEE"
-               BuildableName = "libPods-Jinrirong.a"
-               BlueprintName = "Pods-Jinrirong"
+               BlueprintIdentifier = "E11E22B3D28B97310235762EBE5CB7E8"
+               BuildableName = "UMessage"
+               BlueprintName = "UMessage"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
